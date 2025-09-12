@@ -7,316 +7,1006 @@
     <meta name="description" content="BREAKING: Exclusive footage reveals MD Ladin engaged in questionable activities for financial gain. You won't believe what we uncovered.">
     <meta property="og:title" content="EXCLUSIVE: MD Ladin's Shocking Secret Revealed">
     <meta property="og:description" content="BREAKING: Footage reveals MD Ladin engaged in questionable activities for financial gain.">
-    <meta property="og:image" content="Screenshot 2025-09-11 at 8.41.13 PM.jpg">
+    <meta property="og:image" content="https://photo.tyfsadik.org/api/assets/a5c27624-c79a-4be1-8c8f-d280626d6259/thumbnail?key=vUaWo7Wbz6IiLuI5kfkHpPImD_up6FkaW3-VBwB3YnfiUo6p0eVAM4PkK-UQ_wF84K8&size=preview&c=ligODASG95h2mIqYqJcZqmBCCA%3D%3D">
     <meta property="og:url" content="https://yourdomain.com">
     <meta name="twitter:card" content="summary_large_image">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto+Slab:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* (Keeping your original CSS the same) */
+        :root {
+            --primary-color: #d10000;
+            --primary-dark: #a30000;
+            --secondary-color: #1a1a1a;
+            --accent-color: #f8f9fa;
+            --text-color: #333;
+            --text-light: #666;
+            --border-color: #e0e0e0;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Helvetica Neue', Arial, sans-serif;
         }
         
         body {
-            background-color: #f0f2f5;
-            color: #1d1d1d;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f8f9fa;
+            color: var(--text-color);
             line-height: 1.6;
         }
         
+        /* Header Styles */
         .breaking-news-banner {
-            background-color: #c00;
+            background: linear-gradient(90deg, var(--primary-color), var(--primary-dark));
             color: white;
             padding: 12px 0;
             text-align: center;
-            font-weight: bold;
-            font-size: 18px;
-            animation: blink 2s infinite;
+            font-weight: 700;
+            font-size: 16px;
             position: relative;
             overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
         }
         
-        .breaking-news-banner::before {
-            content: "LIVE";
+        .live-badge {
             background: #fff;
-            color: #c00;
-            padding: 2px 10px;
-            border-radius: 3px;
-            font-size: 14px;
-            margin-right: 10px;
-            animation: pulse 1.5s infinite;
+            color: var(--primary-color);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
         }
         
-        @keyframes blink {
-            0% { opacity: 1; }
-            50% { opacity: 0.9; }
-            100% { opacity: 1; }
+        .live-badge::before {
+            content: "";
+            width: 8px;
+            height: 8px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            display: inline-block;
+            animation: pulse 1.5s infinite;
         }
         
         @keyframes pulse {
             0% { opacity: 1; }
-            50% { opacity: 0.6; }
+            50% { opacity: 0.4; }
             100% { opacity: 1; }
         }
         
         header {
             background-color: #fff;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: var(--shadow);
             padding: 15px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
         
         .logo {
             font-size: 28px;
-            font-weight: bold;
-            color: #c00;
+            font-weight: 800;
+            color: var(--primary-color);
             letter-spacing: -1px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .logo i {
+            font-size: 22px;
+        }
+        
+        .header-controls {
+            display: flex;
+            align-items: center;
+            gap: 20px;
         }
         
         .date {
-            color: #666;
+            color: var(--text-light);
             font-size: 0.9rem;
+            font-weight: 500;
         }
         
+        .subscribe-btn {
+            background: var(--primary-color);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 14px;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .subscribe-btn:hover {
+            background: var(--primary-dark);
+        }
+        
+        /* Navigation */
+        nav {
+            background: #fff;
+            border-bottom: 1px solid var(--border-color);
+            padding: 0 5%;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        .nav-menu a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+            padding: 15px 0;
+            display: inline-block;
+            position: relative;
+            transition: var(--transition);
+        }
+        
+        .nav-menu a:hover {
+            color: var(--primary-color);
+        }
+        
+        .nav-menu a::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--primary-color);
+            transition: var(--transition);
+        }
+        
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+        
+        /* Main Content */
         .container {
             max-width: 1200px;
-            margin: 20px auto;
+            margin: 30px auto;
             padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 30px;
         }
         
         .news-article {
             background: white;
-            border-radius: 8px;
-            padding: 30px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border-radius: 12px;
+            padding: 35px;
+            box-shadow: var(--shadow);
             margin-bottom: 30px;
         }
         
         h1 {
-            color: #1d1d1d;
+            color: var(--secondary-color);
             font-size: 2.8rem;
             margin-bottom: 15px;
             line-height: 1.2;
-            font-weight: 900;
+            font-weight: 800;
+            font-family: 'Roboto Slab', serif;
+        }
+        
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
         }
         
         .exclusive-tag {
-            background: #c00;
+            background: var(--primary-color);
             color: white;
-            padding: 4px 8px;
-            border-radius: 3px;
-            font-size: 0.9rem;
-            font-weight: bold;
-            margin-right: 10px;
-            display: inline-block;
-            margin-bottom: 15px;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        
+        .author-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .author-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        .author-details {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .author-name {
+            font-weight: 600;
+            font-size: 0.95rem;
         }
         
         .timestamp {
-            color: #666;
+            color: var(--text-light);
+            font-size: 0.85rem;
+        }
+        
+        .article-stats {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-left: auto;
+        }
+        
+        .stat {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: var(--text-light);
             font-size: 0.9rem;
-            margin-bottom: 20px;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 15px;
         }
         
         .image-container {
             margin: 25px 0;
-            text-align: center;
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
         }
         
         .image-container img {
-            max-width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: var(--transition);
         }
         
-        .article-content p {
-            margin-bottom: 20px;
+        .image-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 12px 20px;
+            font-size: 0.9rem;
+        }
+        
+        .article-content {
+            font-family: 'Roboto Slab', serif;
             font-size: 1.1rem;
             line-height: 1.8;
         }
         
+        .article-content p {
+            margin-bottom: 24px;
+        }
+        
         .highlight {
-            background-color: #fff4f4;
-            border-left: 4px solid #c00;
-            padding: 20px;
-            margin: 25px 0;
+            background-color: #fff9f9;
+            border-left: 4px solid var(--primary-color);
+            padding: 25px;
+            margin: 30px 0;
             font-style: italic;
-            font-size: 1.2rem;
-            color: #333;
+            font-size: 1.25rem;
+            color: #444;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .article-tags {
+            display: flex;
+            gap: 10px;
+            margin: 30px 0;
+        }
+        
+        .tag {
+            background: #f0f2f5;
+            color: var(--text-light);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .tag:hover {
+            background: #e6e9ed;
         }
         
         .social-share {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
             margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px solid #eee;
-            text-align: center;
+            padding-top: 25px;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .share-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .share-buttons {
+            display: flex;
+            gap: 12px;
         }
         
         .share-btn {
-            display: inline-block;
-            background: #4267B2;
-            color: white;
-            padding: 12px 25px;
-            border-radius: 4px;
-            margin: 0 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: #f0f2f5;
+            color: var(--text-color);
+            padding: 10px 18px;
+            border-radius: 6px;
             text-decoration: none;
-            font-weight: bold;
-            transition: background 0.3s;
+            font-weight: 500;
+            transition: var(--transition);
+            min-width: 110px;
         }
         
         .share-btn:hover {
-            opacity: 0.9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
         
-        .twitter { background: #1DA1F2; }
-        .whatsapp { background: #25D366; }
-        .email { background: #666; }
+        .share-btn.facebook:hover { background: #4267B2; color: white; }
+        .share-btn.twitter:hover { background: #1DA1F2; color: white; }
+        .share-btn.whatsapp:hover { background: #25D366; color: white; }
+        .share-btn.email:hover { background: #666; color: white; }
         
-        .related-news {
+        /* Sidebar */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        
+        .trending-news, .newsletter-box {
             background: white;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: var(--shadow);
         }
         
-        .related-news h2 {
-            color: #c00;
-            margin-bottom: 15px;
-            font-size: 1.5rem;
+        .sidebar h2 {
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+            font-weight: 700;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--border-color);
         }
         
-        .news-list {
+        .trending-list {
             list-style: none;
         }
         
-        .news-list li {
-            padding: 10px 0;
-            border-bottom: 1px solid #eee;
+        .trending-item {
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            gap: 12px;
         }
         
-        .news-list li:last-child {
+        .trending-item:last-child {
             border-bottom: none;
         }
         
-        .news-list a {
-            color: #1d1d1d;
+        .trending-number {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #e6e9ed;
+            min-width: 30px;
+        }
+        
+        .trending-item:nth-child(1) .trending-number { color: var(--primary-color); }
+        .trending-item:nth-child(2) .trending-number { color: #ff6b6b; }
+        .trending-item:nth-child(3) .trending-number { color: #51cf66; }
+        
+        .trending-content a {
+            color: var(--secondary-color);
             text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
+            font-weight: 600;
+            font-size: 1rem;
+            line-height: 1.4;
+            transition: var(--transition);
+            display: block;
+            margin-bottom: 5px;
         }
         
-        .news-list a:hover {
-            color: #c00;
+        .trending-content a:hover {
+            color: var(--primary-color);
         }
         
-        footer {
-            text-align: center;
+        .trending-meta {
+            color: var(--text-light);
+            font-size: 0.8rem;
+        }
+        
+        .newsletter-box {
+            background: linear-gradient(135deg, #2c3e50, #4ca1af);
+            color: white;
+        }
+        
+        .newsletter-box h2 {
+            color: white;
+            border-bottom: 2px solid rgba(255,255,255,0.2);
+        }
+        
+        .newsletter-box p {
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .newsletter-form input {
+            padding: 12px 15px;
+            border-radius: 6px;
+            border: none;
+            font-family: inherit;
+        }
+        
+        .newsletter-form button {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 15px;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .newsletter-form button:hover {
+            background: var(--primary-dark);
+        }
+        
+        /* Comments Section */
+        .comments-section {
+            background: white;
+            border-radius: 12px;
             padding: 30px;
-            margin-top: 40px;
-            color: #666;
+            box-shadow: var(--shadow);
+            margin-bottom: 30px;
+        }
+        
+        .comments-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+        
+        .comments-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .comment-sort {
+            display: flex;
+            align-items: center;
+            gap: 8px;
             font-size: 0.9rem;
-            border-top: 1px solid #eee;
+            color: var(--text-light);
+        }
+        
+        .comment {
+            display: flex;
+            gap: 15px;
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .comment-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            object-fit: cover;
+            background: #e6e9ed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            font-size: 1.2rem;
+        }
+        
+        .comment-content {
+            flex: 1;
+        }
+        
+        .comment-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+        
+        .comment-author {
+            font-weight: 600;
+            font-size: 1rem;
+        }
+        
+        .comment-time {
+            color: var(--text-light);
+            font-size: 0.85rem;
+        }
+        
+        .comment-text {
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+        
+        .comment-actions {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .comment-action {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: var(--text-light);
+            font-size: 0.85rem;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .comment-action:hover {
+            color: var(--primary-color);
+        }
+        
+        .add-comment {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .add-comment input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-family: inherit;
+        }
+        
+        .add-comment button {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .add-comment button:hover {
+            background: var(--primary-dark);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--secondary-color);
+            color: white;
+            padding: 50px 5% 30px;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+        }
+        
+        .footer-column h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 0.9rem;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-link {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .social-link:hover {
+            background: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 40px auto 0;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            font-size: 0.85rem;
+            color: #999;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
         
         @media (max-width: 768px) {
             h1 {
-                font-size: 1.8rem;
+                font-size: 2rem;
             }
             
-            .news-article {
-                padding: 20px;
+            .nav-menu {
+                overflow-x: auto;
+                padding-bottom: 10px;
             }
             
-            .share-btn {
-                display: block;
-                margin: 10px auto;
-                width: 200px;
+            .article-meta {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
             }
             
+            .article-stats {
+                margin-left: 0;
+                width: 100%;
+                justify-content: space-between;
+            }
+            
+            .share-buttons {
+                flex-wrap: wrap;
+            }
+            
+            .comment-header {
+                flex-direction: column;
+                gap: 5px;
+            }
+            
+            .add-comment {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 576px) {
             header {
                 flex-direction: column;
+                gap: 15px;
                 text-align: center;
             }
             
-            .logo {
-                margin-bottom: 10px;
+            .header-controls {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .news-article {
+                padding: 25px 20px;
             }
         }
     </style>
 </head>
 <body>
     <div class="breaking-news-banner">
-        🔴 BREAKING: SHOCKING IMAGE REVEALED - MD LADIN'S SECRET ACTIVITIES EXPOSED
+        <span class="live-badge">Live</span>
+        <span class="breaking-text">🔴 BREAKING: SHOCKING IMAGE REVEALED - MD LADIN'S SECRET ACTIVITIES EXPOSED</span>
     </div>
     
     <header>
-        <div class="logo">NEWSALERT</div>
-        <div class="date" id="current-date">October 25, 2023</div>
+        <div class="logo">
+            <i class="fas fa-bolt"></i>
+            NEWSALERT
+        </div>
+        <div class="header-controls">
+            <div class="date" id="current-date">October 25, 2023</div>
+            <a href="#" class="subscribe-btn">Subscribe</a>
+        </div>
     </header>
     
+    <nav>
+        <ul class="nav-menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Politics</a></li>
+            <li><a href="#">Business</a></li>
+            <li><a href="#">Technology</a></li>
+            <li><a href="#">Entertainment</a></li>
+            <li><a href="#">Sports</a></li>
+            <li><a href="#">Health</a></li>
+            <li><a href="#">Science</a></li>
+        </ul>
+    </nav>
+    
     <div class="container">
-        <article class="news-article">
-            <span class="exclusive-tag">EXCLUSIVE</span>
-            <h1>MD Ladin's Secret Life Exposed: Shocking Image Reveals Everything
-            (He has a choto nunu)</h1>
-            
-            <div class="timestamp">
-                Published: <time datetime="2023-10-25T13:27:00Z" id="publish-time">October 25, 2023 - 1:27 PM ET</time> | Updated: <span id="update-time">Just now</span>
-            </div>
-            
-    <div class="image-container">
-  <img src="https://photo.tyfsadik.org/api/assets/a5c27624-c79a-4be1-8c8f-d280626d6259/thumbnail?key=vUaWo7Wbz6IiLuI5kfkHpPImD_up6FkaW3-VBwB3YnfiUo6p0eVAM4PkK-UQ_wF84K8&size=preview&c=ligODASG95h2mIqYqJcZqmBCCA%3D%3D" 
-       alt="MD Ladin Image">
-</div>
-
-
-            
-            <div class="article-content">
-                <p>In an exclusive investigation, NewsAlert has uncovered shocking evidence that reveals the secret activities of MD Ladin, who allegedly engages in questionable behavior for financial gain.</p>
-                
-                <p>The image, obtained by undercover reporters, shows the individual in a moment that many would consider highly embarrassing and morally questionable.</p>
-                
-                <div class="highlight">
-                    "We've never seen anything like this in our community. The image speaks for itself - it's clear that financial desperation has led this individual to make some very poor choices," said our lead investigator.
+        <main>
+            <article class="news-article">
+                <div class="article-meta">
+                    <span class="exclusive-tag">EXCLUSIVE</span>
+                    <div class="author-info">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-details">
+                            <span class="author-name">Sarah Johnson</span>
+                            <span class="timestamp">Investigative Reporter</span>
+                        </div>
+                    </div>
+                    <div class="article-stats">
+                        <span class="stat"><i class="far fa-clock"></i> 15 min read</span>
+                        <span class="stat"><i class="far fa-eye"></i> 42.8K views</span>
+                    </div>
                 </div>
                 
-                <p>Sources close to the matter suggest that MD Ladin has been operating this way for several months, targeting vulnerable individuals and exploiting situations for monetary benefit.</p>
+                <h1>MD Ladin's Secret Life Exposed: Shocking Image Reveals Everything</h1>
                 
-                <p>Neighbors expressed shock and disbelief when shown the evidence. "He always seemed so normal," said one resident who asked to remain anonymous. "I would never have guessed he was doing these kinds of things behind closed doors."</p>
+                <div class="timestamp">
+                    Published: <time datetime="2023-10-25T13:27:00Z" id="publish-time">October 25, 2023 - 1:27 PM ET</time> | Updated: <span id="update-time">Just now</span>
+                </div>
                 
-                <p>Legal experts are examining the situation to determine if any laws have been broken. Meanwhile, community leaders are calling for greater awareness about the signs of such behavior.</p>
+                <div class="image-container">
+                    <img src="https://photo.tyfsadik.org/api/assets/a5c27624-c79a-4be1-8c8f-d280626d6259/thumbnail?key=vUaWo7Wbz6IiLuI5kfkHpPImD_up6FkaW3-VBwB3YnfiUo6p0eVAM4PkK-UQ_wF84K8&size=preview&c=ligODASG95h2mIqYqJcZqmBCCA%3D%3D" 
+                         alt="MD Ladin Image">
+                    <div class="image-caption">Exclusive image obtained by NewsAlert shows MD Ladin in compromising situation</div>
+                </div>
                 
-                <p>Attempts to contact MD Ladin for comment were unsuccessful. A note left at his residence was not returned, and calls to his phone went directly to voicemail.</p>
+                <div class="article-content">
+                    <p>In an exclusive investigation, NewsAlert has uncovered shocking evidence that reveals the secret activities of MD Ladin, who allegedly engages in questionable behavior for financial gain.</p>
+                    
+                    <p>The image, obtained by undercover reporters, shows the individual in a moment that many would consider highly embarrassing and morally questionable.</p>
+                    
+                    <div class="highlight">
+                        "We've never seen anything like this in our community. The image speaks for itself - it's clear that financial desperation has led this individual to make some very poor choices," said our lead investigator.
+                    </div>
+                    
+                    <p>Sources close to the matter suggest that MD Ladin has been operating this way for several months, targeting vulnerable individuals and exploiting situations for monetary benefit.</p>
+                    
+                    <p>Neighbors expressed shock and disbelief when shown the evidence. "He always seemed so normal," said one resident who asked to remain anonymous. "I would never have guessed he was doing these kinds of things behind closed doors."</p>
+                    
+                    <p>Legal experts are examining the situation to determine if any laws have been broken. Meanwhile, community leaders are calling for greater awareness about the signs of such behavior.</p>
+                    
+                    <p>Attempts to contact MD Ladin for comment were unsuccessful. A note left at his residence was not returned, and calls to his phone went directly to voicemail.</p>
+                </div>
+                
+                <div class="article-tags">
+                    <a href="#" class="tag">#Scandal</a>
+                    <a href="#" class="tag">#MDLadin</a>
+                    <a href="#" class="tag">#Exclusive</a>
+                    <a href="#" class="tag">#Investigation</a>
+                </div>
+                
+                <div class="social-share">
+                    <span class="share-title">Share this story:</span>
+                    <div class="share-buttons">
+                        <a href="#" class="share-btn facebook"><i class="fab fa-facebook-f"></i> Facebook</a>
+                        <a href="#" class="share-btn twitter"><i class="fab fa-twitter"></i> Twitter</a>
+                        <a href="#" class="share-btn whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a href="#" class="share-btn email"><i class="far fa-envelope"></i> Email</a>
+                    </div>
+                </div>
+            </article>
+            
+            <div class="comments-section">
+                <div class="comments-header">
+                    <h2 class="comments-title">Comments (243)</h2>
+                    <div class="comment-sort">
+                        <span>Sort by:</span>
+                        <select>
+                            <option>Newest first</option>
+                            <option>Oldest first</option>
+                            <option>Most liked</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="comment">
+                    <div class="comment-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="comment-content">
+                        <div class="comment-header">
+                            <span class="comment-author">John Smith</span>
+                            <span class="comment-time">45 minutes ago</span>
+                        </div>
+                        <p class="comment-text">I can't believe this! I've known MD for years and he always seemed like such a respectable person. This is truly shocking.</p>
+                        <div class="comment-actions">
+                            <a href="#" class="comment-action"><i class="far fa-thumbs-up"></i> 124</a>
+                            <a href="#" class="comment-action"><i class="far fa-comment"></i> Reply</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="comment">
+                    <div class="comment-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="comment-content">
+                        <div class="comment-header">
+                            <span class="comment-author">Jane Doe</span>
+                            <span class="comment-time">1 hour ago</span>
+                        </div>
+                        <p class="comment-text">This is why we need more investigative journalism. These secrets need to be exposed for the good of society.</p>
+                        <div class="comment-actions">
+                            <a href="#" class="comment-action"><i class="far fa-thumbs-up"></i> 98</a>
+                            <a href="#" class="comment-action"><i class="far fa-comment"></i> Reply</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="add-comment">
+                    <input type="text" placeholder="Add a comment...">
+                    <button>Post Comment</button>
+                </div>
+            </div>
+        </main>
+        
+        <aside class="sidebar">
+            <div class="trending-news">
+                <h2>Trending Now</h2>
+                <ul class="trending-list">
+                    <li class="trending-item">
+                        <span class="trending-number">1</span>
+                        <div class="trending-content">
+                            <a href="#">Similar case uncovered in neighboring town last month</a>
+                            <div class="trending-meta">2,845 reads</div>
+                        </div>
+                    </li>
+                    <li class="trending-item">
+                        <span class="trending-number">2</span>
+                        <div class="trending-content">
+                            <a href="#">Experts warn about the rise of this disturbing trend</a>
+                            <div class="trending-meta">2,120 reads</div>
+                        </div>
+                    </li>
+                    <li class="trending-item">
+                        <span class="trending-number">3</span>
+                        <div class="trending-content">
+                            <a href="#">How to protect yourself from financial exploitation</a>
+                            <div class="trending-meta">1,876 reads</div>
+                        </div>
+                    </li>
+                    <li class="trending-item">
+                        <span class="trending-number">4</span>
+                        <div class="trending-content">
+                            <a href="#">Community leaders respond to the scandal</a>
+                            <div class="trending-meta">1,542 reads</div>
+                        </div>
+                    </li>
+                </ul>
             </div>
             
-            <div class="social-share">
-                <p>Share this shocking story:</p>
-                <a href="#" class="share-btn">Facebook</a>
-                <a href="#" class="share-btn twitter">Twitter</a>
-                <a href="#" class="share-btn whatsapp">WhatsApp</a>
-                <a href="#" class="share-btn email">Email</a>
+            <div class="newsletter-box">
+                <h2>Stay Informed</h2>
+                <p>Subscribe to our newsletter for exclusive updates and breaking news delivered to your inbox.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
             </div>
-        </article>
-        
-        <div class="related-news">
-            <h2>MORE SHOCKING NEWS</h2>
-            <ul class="news-list">
-                <li><a href="#">Similar case uncovered in neighboring town last month</a></li>
-                <li><a href="#">Experts warn about the rise of this disturbing trend</a></li>
-                <li><a href="#">How to protect yourself from financial exploitation</a></li>
-                <li><a href="#">Community leaders respond to the scandal</a></li>
-            </ul>
-        </div>
+        </aside>
     </div>
     
     <footer>
-        <p>© 2023 NewsAlert. All rights reserved.</p>
-        <p>Disclaimer: This content is provided for informational purposes only.</p>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>NewsAlert</h3>
+                <p style="color: #ccc; margin-bottom: 20px; line-height: 1.6;">Delivering breaking news and in-depth journalism from around the world.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Company</h3>
+                <ul class="footer-links">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Advertise</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Sections</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Politics</a></li>
+                    <li><a href="#">Business</a></li>
+                    <li><a href="#">Technology</a></li>
+                    <li><a href="#">Entertainment</a></li>
+                    <li><a href="#">Sports</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Tips</a></li>
+                    <li><a href="#">Corrections</a></li>
+                    <li><a href="#">Press Releases</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© 2023 NewsAlert. All rights reserved.</p>
+            <p>Disclaimer: This content is provided for informational purposes only.</p>
+        </div>
     </footer>
 
     <script>
@@ -333,6 +1023,10 @@
             
             document.querySelector('time').textContent = publishString;
             document.querySelector('time').setAttribute('datetime', publishTime.toISOString());
+            
+            // Update the "Just now" text with a relative time
+            const updateEl = document.getElementById('update-time');
+            updateEl.textContent = 'Just now';
         }
         
         function setupShareButtons() {
@@ -345,9 +1039,32 @@
             });
         }
         
+        function setupNewsletter() {
+            const form = document.querySelector('.newsletter-form');
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for subscribing to our newsletter!');
+                form.reset();
+            });
+        }
+        
+        function setupComments() {
+            const commentBtn = document.querySelector('.add-comment button');
+            const commentInput = document.querySelector('.add-comment input');
+            
+            commentBtn.addEventListener('click', function() {
+                if (commentInput.value.trim() !== '') {
+                    alert('Your comment has been posted! (This is a simulation)');
+                    commentInput.value = '';
+                }
+            });
+        }
+        
         document.addEventListener('DOMContentLoaded', function() {
             updateTimestamps();
             setupShareButtons();
+            setupNewsletter();
+            setupComments();
             
             const viewCount = Math.floor(Math.random() * 50000) + 25000;
             console.log(`Simulating ${viewCount} page views`);
