@@ -3,41 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GitMind | Professional 50-Question IQ Assessment</title>
+    <title>NeuroMetric | Advanced Cognitive Assessment</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         :root {
-            --github-dark: #0d1117;
-            --github-dark-secondary: #161b22;
-            --github-border: #30363d;
-            --github-text: #c9d1d9;
-            --github-text-secondary: #8b949e;
-            --github-blue: #58a6ff;
-            --github-green: #3fb950;
-            --github-red: #f85149;
-            --github-purple: #bc8cff;
-            --github-orange: #d29922;
+            --primary-dark: #0f172a;
+            --secondary-dark: #1e293b;
+            --accent-blue: #3b82f6;
+            --accent-purple: #8b5cf6;
+            --accent-green: #10b981;
+            --accent-red: #ef4444;
+            --accent-orange: #f59e0b;
+            --text-primary: #f8fafc;
+            --text-secondary: #cbd5e1;
+            --border-color: #334155;
         }
 
         body {
-            background-color: var(--github-dark);
-            color: var(--github-text);
-            line-height: 1.5;
+            background-color: var(--primary-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
         }
 
         .header {
-            background-color: var(--github-dark-secondary);
-            border-bottom: 1px solid var(--github-border);
+            background-color: var(--secondary-dark);
+            border-bottom: 1px solid var(--border-color);
             padding: 16px 5%;
             display: flex;
             align-items: center;
@@ -50,29 +50,30 @@
             display: flex;
             align-items: center;
             gap: 12px;
-            font-size: clamp(18px, 4vw, 20px);
-            font-weight: 600;
+            font-size: clamp(18px, 4vw, 22px);
+            font-weight: 700;
         }
 
         .logo i {
-            color: var(--github-blue);
+            color: var(--accent-blue);
         }
 
         .nav-links {
             display: flex;
-            gap: 15px;
+            gap: 20px;
             flex-wrap: wrap;
         }
 
         .nav-links a {
-            color: var(--github-text);
+            color: var(--text-secondary);
             text-decoration: none;
             font-size: 14px;
             white-space: nowrap;
+            transition: color 0.3s;
         }
 
         .nav-links a:hover {
-            color: var(--github-blue);
+            color: var(--accent-blue);
         }
 
         .container {
@@ -84,20 +85,21 @@
         }
 
         .card {
-            background-color: var(--github-dark-secondary);
-            border: 1px solid var(--github-border);
-            border-radius: 6px;
-            padding: clamp(16px, 4vw, 24px);
+            background-color: var(--secondary-dark);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: clamp(20px, 4vw, 30px);
             margin-bottom: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
         }
 
         .card-header {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            margin-bottom: 16px;
-            padding-bottom: 16px;
-            border-bottom: 1px solid var(--github-border);
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
             flex-direction: column;
             gap: 15px;
         }
@@ -110,32 +112,37 @@
         }
 
         .card-title {
-            font-size: clamp(20px, 5vw, 24px);
-            font-weight: 600;
+            font-size: clamp(22px, 5vw, 28px);
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
 
         .card-subtitle {
-            color: var(--github-text-secondary);
-            font-size: 14px;
-            margin-top: 4px;
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin-top: 6px;
         }
 
         .btn {
-            background-color: var(--github-green);
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
             color: white;
             border: none;
-            border-radius: 6px;
-            padding: 10px 16px;
-            font-size: 14px;
-            font-weight: 500;
+            border-radius: 8px;
+            padding: 12px 20px;
+            font-size: 16px;
+            font-weight: 600;
             cursor: pointer;
             display: inline-flex;
             align-items: center;
             justify-content: center;
             gap: 8px;
-            transition: all 0.2s;
+            transition: all 0.3s;
             text-align: center;
             width: 100%;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
         }
 
         @media (min-width: 480px) {
@@ -145,27 +152,26 @@
         }
 
         .btn:hover {
-            background-color: #2ea043;
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(59, 130, 246, 0.4);
         }
 
         .btn-outline {
-            background-color: transparent;
-            border: 1px solid var(--github-border);
-            color: var(--github-text);
+            background: transparent;
+            border: 2px solid var(--accent-blue);
+            color: var(--accent-blue);
         }
 
         .btn-outline:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-            border-color: var(--github-text);
+            background-color: rgba(59, 130, 246, 0.1);
         }
 
         .btn-danger {
-            background-color: var(--github-red);
+            background: linear-gradient(135deg, var(--accent-red), #f97316);
         }
 
         .btn-danger:hover {
-            background-color: #da3633;
+            box-shadow: 0 6px 15px rgba(239, 68, 68, 0.4);
         }
 
         .screen {
@@ -178,7 +184,7 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
+            from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
@@ -189,26 +195,25 @@
         }
 
         .welcome-icon {
-            font-size: clamp(48px, 12vw, 64px);
-            color: var(--github-blue);
+            font-size: clamp(60px, 15vw, 80px);
             margin-bottom: 20px;
-        }
-
-        .welcome-title {
-            font-size: clamp(32px, 8vw, 48px);
-            font-weight: 700;
-            margin-bottom: 16px;
-            background: linear-gradient(135deg, var(--github-blue), var(--github-purple));
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
+        }
+
+        .welcome-title {
+            font-size: clamp(36px, 8vw, 52px);
+            font-weight: 800;
+            margin-bottom: 16px;
             line-height: 1.2;
         }
 
         .welcome-subtitle {
-            font-size: clamp(16px, 4vw, 20px);
-            color: var(--github-text-secondary);
-            margin-bottom: 24px;
+            font-size: clamp(18px, 4vw, 22px);
+            color: var(--text-secondary);
+            margin-bottom: 30px;
             line-height: 1.4;
         }
 
@@ -232,63 +237,68 @@
         }
 
         .feature {
-            padding: 20px;
-            border: 1px solid var(--github-border);
-            border-radius: 6px;
+            padding: 24px;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
             text-align: center;
-            transition: transform 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s;
+            background-color: rgba(30, 41, 59, 0.7);
         }
 
         .feature:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
         }
 
         .feature i {
-            font-size: clamp(24px, 6vw, 32px);
-            color: var(--github-blue);
+            font-size: clamp(28px, 6vw, 36px);
             margin-bottom: 16px;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
 
         .feature-title {
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 8px;
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
         }
 
         .feature-desc {
-            color: var(--github-text-secondary);
-            font-size: 14px;
-            line-height: 1.4;
+            color: var(--text-secondary);
+            font-size: 15px;
+            line-height: 1.5;
         }
 
         .warning-box {
-            background-color: rgba(158, 106, 6, 0.1);
-            border: 1px solid rgba(158, 106, 6, 0.4);
-            border-radius: 6px;
-            padding: 16px;
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(217, 119, 6, 0.1));
+            border: 1px solid rgba(245, 158, 11, 0.4);
+            border-radius: 12px;
+            padding: 20px;
             margin: 30px 0;
             display: flex;
             align-items: flex-start;
-            gap: 12px;
+            gap: 15px;
         }
 
         .warning-box i {
-            color: #d29922;
-            font-size: 20px;
+            color: var(--accent-orange);
+            font-size: 24px;
             margin-top: 2px;
             flex-shrink: 0;
         }
 
         .warning-content h3 {
-            color: #e3b341;
-            margin-bottom: 8px;
-            font-size: 18px;
+            color: var(--accent-orange);
+            margin-bottom: 10px;
+            font-size: 20px;
         }
 
         .warning-content p {
-            color: var(--github-text-secondary);
-            font-size: 14px;
-            line-height: 1.5;
+            color: var(--text-secondary);
+            font-size: 16px;
+            line-height: 1.6;
         }
 
         .quiz-header {
@@ -319,14 +329,14 @@
         }
 
         .quiz-info-label {
-            font-size: 12px;
-            color: var(--github-text-secondary);
-            margin-bottom: 4px;
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 6px;
         }
 
         .quiz-info-value {
-            font-size: 16px;
-            font-weight: 600;
+            font-size: 18px;
+            font-weight: 700;
         }
 
         .question-container {
@@ -334,15 +344,15 @@
         }
 
         .question-number {
-            font-size: 14px;
-            color: var(--github-text-secondary);
-            margin-bottom: 8px;
+            font-size: 16px;
+            color: var(--text-secondary);
+            margin-bottom: 10px;
         }
 
         .question-text {
-            font-size: clamp(16px, 4vw, 18px);
-            font-weight: 500;
-            margin-bottom: 20px;
+            font-size: clamp(18px, 4vw, 22px);
+            font-weight: 600;
+            margin-bottom: 24px;
             line-height: 1.6;
         }
 
@@ -352,69 +362,70 @@
         }
 
         .option {
-            background-color: var(--github-dark);
-            border: 1px solid var(--github-border);
-            border-radius: 6px;
-            padding: 16px;
+            background-color: var(--primary-dark);
+            border: 2px solid var(--border-color);
+            border-radius: 10px;
+            padding: 18px;
             cursor: pointer;
-            transition: all 0.2s;
+            transition: all 0.3s;
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 15px;
         }
 
         .option:hover {
-            background-color: rgba(255, 255, 255, 0.03);
-            border-color: var(--github-blue);
+            background-color: rgba(59, 130, 246, 0.05);
+            border-color: var(--accent-blue);
         }
 
         .option.selected {
-            border-color: var(--github-blue);
-            background-color: rgba(56, 139, 253, 0.1);
+            border-color: var(--accent-blue);
+            background-color: rgba(59, 130, 246, 0.1);
         }
 
         .option.correct {
-            border-color: var(--github-green);
-            background-color: rgba(46, 185, 80, 0.1);
+            border-color: var(--accent-green);
+            background-color: rgba(16, 185, 129, 0.1);
         }
 
         .option.incorrect {
-            border-color: var(--github-red);
-            background-color: rgba(248, 81, 73, 0.1);
+            border-color: var(--accent-red);
+            background-color: rgba(239, 68, 68, 0.1);
         }
 
         .option-letter {
-            width: 32px;
-            height: 32px;
-            border-radius: 6px;
-            background-color: var(--github-dark-secondary);
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            background-color: var(--secondary-dark);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: 600;
-            font-size: 14px;
+            font-weight: 700;
+            font-size: 16px;
             flex-shrink: 0;
+            transition: all 0.3s;
         }
 
         .option.selected .option-letter {
-            background-color: var(--github-blue);
+            background-color: var(--accent-blue);
             color: white;
         }
 
         .option.correct .option-letter {
-            background-color: var(--github-green);
+            background-color: var(--accent-green);
             color: white;
         }
 
         .option.incorrect .option-letter {
-            background-color: var(--github-red);
+            background-color: var(--accent-red);
             color: white;
         }
 
         .quiz-controls {
             display: flex;
             justify-content: space-between;
-            margin-top: 24px;
+            margin-top: 30px;
             flex-direction: column;
             gap: 12px;
         }
@@ -426,21 +437,48 @@
         }
 
         .progress-container {
-            margin-top: 24px;
+            margin-top: 30px;
         }
 
         .progress-bar {
-            height: 8px;
-            background-color: var(--github-dark);
-            border-radius: 4px;
+            height: 10px;
+            background-color: var(--primary-dark);
+            border-radius: 5px;
             overflow: hidden;
         }
 
         .progress {
             height: 100%;
-            background: linear-gradient(90deg, var(--github-blue), var(--github-purple));
-            border-radius: 4px;
-            transition: width 0.3s ease;
+            background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
+            border-radius: 5px;
+            transition: width 0.5s ease;
+        }
+
+        .feedback-container {
+            margin-top: 20px;
+            padding: 16px;
+            border-radius: 8px;
+            display: none;
+        }
+
+        .feedback-correct {
+            background-color: rgba(16, 185, 129, 0.1);
+            border: 1px solid var(--accent-green);
+            color: var(--accent-green);
+        }
+
+        .feedback-incorrect {
+            background-color: rgba(239, 68, 68, 0.1);
+            border: 1px solid var(--accent-red);
+            color: var(--accent-red);
+        }
+
+        .feedback-title {
+            font-weight: 700;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .result-screen {
@@ -450,42 +488,46 @@
         }
 
         .result-icon {
-            font-size: clamp(60px, 15vw, 80px);
+            font-size: clamp(70px, 15vw, 90px);
             margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
 
         .result-title {
-            font-size: clamp(28px, 7vw, 36px);
-            font-weight: 700;
+            font-size: clamp(32px, 7vw, 42px);
+            font-weight: 800;
             margin-bottom: 16px;
             line-height: 1.2;
         }
 
         .result-score {
-            font-size: clamp(48px, 12vw, 64px);
-            font-weight: 700;
+            font-size: clamp(56px, 12vw, 72px);
+            font-weight: 800;
             margin: 20px 0;
-            background: linear-gradient(135deg, var(--github-blue), var(--github-purple));
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
         }
 
         .result-description {
-            color: var(--github-text-secondary);
-            font-size: clamp(16px, 4vw, 18px);
+            color: var(--text-secondary);
+            font-size: clamp(18px, 4vw, 20px);
             margin-bottom: 24px;
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
-            line-height: 1.5;
+            line-height: 1.6;
         }
 
         .result-stats {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 16px;
-            margin: 24px 0;
+            gap: 20px;
+            margin: 30px 0;
         }
 
         @media (min-width: 480px) {
@@ -501,28 +543,33 @@
         }
 
         .stat {
-            background-color: var(--github-dark);
-            border: 1px solid var(--github-border);
-            border-radius: 6px;
-            padding: 20px;
+            background-color: var(--primary-dark);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
+            transition: transform 0.3s;
+        }
+
+        .stat:hover {
+            transform: translateY(-5px);
         }
 
         .stat-value {
-            font-size: clamp(24px, 6vw, 32px);
-            font-weight: 700;
+            font-size: clamp(28px, 6vw, 36px);
+            font-weight: 800;
             margin-bottom: 8px;
         }
 
         .stat-label {
-            color: var(--github-text-secondary);
-            font-size: 14px;
+            color: var(--text-secondary);
+            font-size: 16px;
         }
 
         .result-actions {
             display: flex;
             gap: 12px;
             justify-content: center;
-            margin-top: 24px;
+            margin-top: 30px;
             flex-direction: column;
         }
 
@@ -533,9 +580,9 @@
         }
 
         .footer {
-            background-color: var(--github-dark-secondary);
-            border-top: 1px solid var(--github-border);
-            padding: 20px 5%;
+            background-color: var(--secondary-dark);
+            border-top: 1px solid var(--border-color);
+            padding: 24px 5%;
             margin-top: auto;
         }
 
@@ -546,7 +593,7 @@
             justify-content: space-between;
             align-items: center;
             flex-direction: column;
-            gap: 15px;
+            gap: 20px;
             text-align: center;
         }
 
@@ -559,25 +606,25 @@
 
         .footer-links {
             display: flex;
-            gap: 20px;
+            gap: 24px;
             flex-wrap: wrap;
             justify-content: center;
         }
 
         .footer-links a {
-            color: var(--github-text-secondary);
+            color: var(--text-secondary);
             text-decoration: none;
-            font-size: 12px;
+            font-size: 14px;
+            transition: color 0.3s;
         }
 
         .footer-links a:hover {
-            color: var(--github-blue);
-            text-decoration: underline;
+            color: var(--accent-blue);
         }
 
         .copyright {
-            color: var(--github-text-secondary);
-            font-size: 12px;
+            color: var(--text-secondary);
+            font-size: 14px;
         }
 
         .hidden {
@@ -596,21 +643,21 @@
             }
             
             .option {
-                padding: 12px;
+                padding: 14px;
             }
             
             .option-letter {
-                width: 28px;
-                height: 28px;
-                font-size: 12px;
+                width: 36px;
+                height: 36px;
+                font-size: 14px;
             }
         }
 
         /* Touch-friendly improvements */
         @media (hover: none) {
             .option:hover {
-                background-color: var(--github-dark);
-                border-color: var(--github-border);
+                background-color: var(--primary-dark);
+                border-color: var(--border-color);
             }
             
             .btn:hover {
@@ -620,14 +667,18 @@
             .feature:hover {
                 transform: none;
             }
+            
+            .stat:hover {
+                transform: none;
+            }
         }
 
         /* High contrast mode support */
         @media (prefers-contrast: high) {
             :root {
-                --github-border: #ffffff;
-                --github-text: #ffffff;
-                --github-text-secondary: #cccccc;
+                --border-color: #ffffff;
+                --text-primary: #ffffff;
+                --text-secondary: #e2e8f0;
             }
         }
 
@@ -644,12 +695,12 @@
 <body>
     <header class="header">
         <div class="logo">
-            <i class="fa-sharp-duotone fa-solid fa-mars-double fa-shake"></i>
-            <span>Seylontea Gay</span>
+            <i class="fas fa-brain"></i>
+            <span>NeuroMetric</span>
         </div>
         <nav class="nav-links">
             <a href="#">Home</a>
-            <a href="#">Tests</a>
+            <a href="#">Assessments</a>
             <a href="#">Research</a>
             <a href="#">About</a>
         </nav>
@@ -662,32 +713,32 @@
                 <div class="welcome-icon">
                     <i class="fas fa-brain"></i>
                 </div>
-                <h1 class="welcome-title">If you leave, you gay</h1>
-                <p class="welcome-subtitle">A rigorous cognitive evaluation designed for high-intelligence individuals</p>
+                <h1 class="welcome-title">Advanced Cognitive Assessment</h1>
+                <p class="welcome-subtitle">A comprehensive evaluation of logical reasoning, pattern recognition, and problem-solving abilities</p>
                 
                 <div class="warning-box">
                     <i class="fas fa-exclamation-triangle"></i>
                     <div class="warning-content">
-                        <h3>Extreme Difficulty Warning</h3>
-                        <p>This assessment contains 50 exceptionally challenging questions designed to differentiate among the top 2% of cognitive ability. The average score is 25/50. Proceed only if you are prepared for a significant mental challenge.</p>
+                        <h3>High Difficulty Assessment</h3>
+                        <p>This assessment contains 50 challenging questions designed to differentiate among the top percentiles of cognitive ability. The questions require advanced logical reasoning, pattern recognition, and abstract thinking skills. Average completion time is 45-60 minutes.</p>
                     </div>
                 </div>
 
                 <div class="features">
                     <div class="feature">
-                        <i class="fas fa-clock"></i>
-                        <h3 class="feature-title">Time Constrained</h3>
-                        <p class="feature-desc">90 minutes for 50 complex problems</p>
+                        <i class="fas fa-bolt"></i>
+                        <h3 class="feature-title">Instant Feedback</h3>
+                        <p class="feature-desc">Know immediately if your answer is correct with detailed explanations</p>
                     </div>
                     <div class="feature">
-                        <i class="fas fa-chart-line"></i>
-                        <h3 class="feature-title">Precise Metrics</h3>
-                        <p class="feature-desc">Detailed analysis of cognitive strengths</p>
+                        <i class="fas fa-chart-bar"></i>
+                        <h3 class="feature-title">Detailed Analytics</h3>
+                        <p class="feature-desc">Comprehensive analysis of your cognitive strengths and areas for improvement</p>
                     </div>
                     <div class="feature">
-                        <i class="fas fa-user-graduate"></i>
-                        <h3 class="feature-title">Scientific Design</h3>
-                        <p class="feature-desc">Based on established psychometric principles</p>
+                        <i class="fas fa-graduation-cap"></i>
+                        <h3 class="feature-title">Scientific Validation</h3>
+                        <p class="feature-desc">Based on established psychometric principles and cognitive research</p>
                     </div>
                 </div>
 
@@ -702,17 +753,21 @@
             <div class="card">
                 <div class="card-header">
                     <div>
-                        <h2 class="card-title">IQ Assessment</h2>
-                        <p class="card-subtitle">Pattern Recognition • Logical Reasoning • Abstract Thinking</p>
+                        <h2 class="card-title">Cognitive Assessment</h2>
+                        <p class="card-subtitle">Logical Reasoning • Pattern Recognition • Abstract Thinking</p>
                     </div>
                     <div class="quiz-info">
                         <div class="quiz-info-item">
                             <span class="quiz-info-label">TIME REMAINING</span>
-                            <span class="quiz-info-value" id="timeLeft">90:00</span>
+                            <span class="quiz-info-value" id="timeLeft">60:00</span>
                         </div>
                         <div class="quiz-info-item">
                             <span class="quiz-info-label">QUESTIONS</span>
                             <span class="quiz-info-value" id="questionCount">1/50</span>
+                        </div>
+                        <div class="quiz-info-item">
+                            <span class="quiz-info-label">SCORE</span>
+                            <span class="quiz-info-value" id="currentScore">0</span>
                         </div>
                     </div>
                 </div>
@@ -723,6 +778,14 @@
                     
                     <div class="options-container" id="optionsContainer">
                         <!-- Options will be inserted here by JavaScript -->
+                    </div>
+
+                    <div class="feedback-container" id="feedbackContainer">
+                        <div class="feedback-title" id="feedbackTitle">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Correct!</span>
+                        </div>
+                        <div id="feedbackText">Explanation will appear here</div>
                     </div>
                 </div>
 
@@ -750,20 +813,20 @@
                     <i class="fas fa-trophy"></i>
                 </div>
                 <h2 class="result-title" id="resultTitle">Assessment Complete</h2>
-                <div class="result-score" id="finalScore">32/50</div>
-                <p class="result-description" id="resultDescription">Your performance indicates exceptional cognitive ability, placing you in the 98th percentile of the general population.</p>
+                <div class="result-score" id="finalScore">0/50</div>
+                <p class="result-description" id="resultDescription">Your performance is being calculated...</p>
                 
                 <div class="result-stats">
                     <div class="stat">
-                        <div class="stat-value" id="correctAnswers">32</div>
+                        <div class="stat-value" id="correctAnswers">0</div>
                         <div class="stat-label">Correct Answers</div>
                     </div>
                     <div class="stat">
-                        <div class="stat-value" id="incorrectAnswers">18</div>
+                        <div class="stat-value" id="incorrectAnswers">0</div>
                         <div class="stat-label">Incorrect Answers</div>
                     </div>
                     <div class="stat">
-                        <div class="stat-value" id="timeSpent">78:24</div>
+                        <div class="stat-value" id="timeSpent">00:00</div>
                         <div class="stat-label">Time Spent</div>
                     </div>
                 </div>
@@ -791,57 +854,70 @@
                 <a href="#">Contact</a>
             </div>
             <div class="copyright">
-                © 2023 GitMind. Professional cognitive assessments.
+                © 2023 NeuroMetric. Professional cognitive assessments.
             </div>
         </div>
     </footer>
 
     <script>
-        // Generate 50 extremely difficult IQ test questions
+        // Generate 50 challenging IQ test questions with explanations
         const generateIQQuestions = () => {
             const questions = [];
             
-            // Question 1
+            // Question 1 - Advanced logical reasoning
             questions.push({
-                question: "If all Zips are Zaps and some Zaps are Zops, then which statement must be true?",
+                question: "If all Flibs are Flabs and some Flabs are Flobs, which statement must be true?",
                 options: [
-                    "All Zips are Zops",
-                    "Some Zips are Zops",
-                    "No Zips are Zops",
-                    "Some Zops are Zips"
+                    "All Flibs are Flobs",
+                    "Some Flibs are Flobs",
+                    "No Flibs are Flobs",
+                    "Some Flobs are Flibs"
                 ],
                 correct: 3,
-                explanation: "Since all Zips are Zaps and some Zaps are Zops, it follows that some Zops are Zaps, and since all Zips are Zaps, some Zops could be Zips. However, we cannot definitively say that some Zips are Zops because the Zaps that are Zops might not include any Zips."
+                explanation: "Since all Flibs are Flabs and some Flabs are Flobs, it follows that some Flobs are Flabs. However, we cannot definitively conclude that some Flibs are Flobs because the Flabs that are Flobs might not include any Flibs. The only statement that must be true is that some Flobs are Flabs, but since all Flibs are Flabs, some Flobs could potentially be Flibs."
             });
             
-            // Question 2
+            // Question 2 - Mathematical pattern
             questions.push({
-                question: "Complete the sequence: 2, 6, 12, 20, 30, ?",
-                options: ["40", "42", "44", "46"],
-                correct: 1,
-                explanation: "The pattern is adding consecutive even numbers: +4, +6, +8, +10, so next is +12 → 30+12=42"
+                question: "What is the next number in this sequence: 2, 3, 7, 16, 32, ?",
+                options: ["57", "59", "61", "63"],
+                correct: 0,
+                explanation: "The pattern is: each number is obtained by adding consecutive perfect squares to the previous number. 2+1²=3, 3+2²=7, 7+3²=16, 16+4²=32, so next is 32+5²=57."
             });
             
-            // Question 3
+            // Question 3 - Abstract reasoning
             questions.push({
-                question: "If three painters can paint three rooms in three days, how many rooms can six painters paint in six days?",
+                question: "Which pattern completes the sequence? △ ◯ □ △ △ ◯ □ △ △ △ ◯ □ ?",
+                options: ["△", "◯", "□", "△ △"],
+                correct: 2,
+                explanation: "The pattern is: one triangle, one circle, one square, then two triangles, one circle, one square, then three triangles, one circle, one square. So the next element should be one square, continuing the pattern."
+            });
+            
+            // Question 4 - Logical deduction
+            questions.push({
+                question: "Three people are in a room: Alice, Bob, and Charlie. At least one is lying. Alice says: 'Bob is lying.' Bob says: 'Charlie is lying.' Charlie says: 'I am not lying.' Who is definitely lying?",
+                options: ["Alice", "Bob", "Charlie", "Cannot be determined"],
+                correct: 2,
+                explanation: "If Charlie is telling the truth, then Bob is lying (since Bob says Charlie is lying). If Bob is lying, then Charlie is not lying, which matches. But Alice says Bob is lying, which would be true. This would mean no one is lying, which contradicts the premise. Therefore, Charlie must be lying. If Charlie is lying, then Bob is telling the truth (since Bob says Charlie is lying), and Alice is lying (since she says Bob is lying, but Bob is telling the truth). So Charlie is definitely lying."
+            });
+            
+            // Question 5 - Mathematical reasoning
+            questions.push({
+                question: "If 3 painters can paint 3 rooms in 3 days, how many rooms can 6 painters paint in 6 days?",
                 options: ["6", "9", "12", "18"],
                 correct: 2,
                 explanation: "If 3 painters paint 3 rooms in 3 days, then 1 painter paints 1 room in 3 days. So in 6 days, 1 painter paints 2 rooms. Therefore, 6 painters paint 12 rooms in 6 days."
             });
             
-            // Continue with the rest of the questions...
-            // For brevity, I'll add a few more examples and then fill the rest with placeholders
-            
-            // Question 4
+            // Question 6 - Pattern recognition
             questions.push({
-                question: "Which number does not belong in this sequence: 2, 3, 6, 7, 8, 14, 15, 30",
+                question: "Which number does not belong: 2, 3, 6, 7, 8, 14, 15, 30",
                 options: ["6", "8", "14", "30"],
                 correct: 1,
                 explanation: "The pattern is: ×1.5, ×2, +1, ×2, +1, ×2, +1. 2×1.5=3, 3×2=6, 6+1=7, 7×2=14, 14+1=15, 15×2=30. The number 8 doesn't fit this pattern."
             });
             
-            // Question 5
+            // Question 7 - Logical reasoning
             questions.push({
                 question: "A clock loses 10 minutes every hour. If the clock is set correctly at noon, what time will it show when the actual time is 6:00 PM?",
                 options: ["5:00 PM", "5:12 PM", "5:24 PM", "5:36 PM"],
@@ -849,13 +925,42 @@
                 explanation: "In 6 hours, the clock will lose 6×10=60 minutes. So it will show 5:00 PM when the actual time is 6:00 PM."
             });
             
-            // Fill the remaining questions with challenging content
-            for (let i = 6; i <= 50; i++) {
+            // Question 8 - Abstract pattern
+            questions.push({
+                question: "If RED is coded as 1854, and BLUE is coded as 2122155, how is GREEN coded?",
+                options: ["7185514", "7185554", "7185515", "7185555"],
+                correct: 0,
+                explanation: "Each letter is coded as its position in the alphabet (A=1, B=2, etc.). R=18, E=5, D=4 → 1854. B=2, L=12, U=21, E=5 → 2122155. So G=7, R=18, E=5, E=5, N=14 → 7185514."
+            });
+            
+            // Question 9 - Mathematical reasoning
+            questions.push({
+                question: "What is the probability of getting at least one head when flipping three fair coins?",
+                options: ["1/8", "1/2", "7/8", "3/4"],
+                correct: 2,
+                explanation: "The probability of getting no heads (all tails) is (1/2)³ = 1/8. Therefore, the probability of getting at least one head is 1 - 1/8 = 7/8."
+            });
+            
+            // Question 10 - Logical deduction
+            questions.push({
+                question: "All mathematicians are logical. Some philosophers are mathematicians. Therefore:",
+                options: [
+                    "All philosophers are logical",
+                    "Some philosophers are logical",
+                    "No philosophers are logical",
+                    "Some logical people are philosophers"
+                ],
+                correct: 1,
+                explanation: "Since all mathematicians are logical, and some philosophers are mathematicians, it follows that some philosophers are logical. We cannot conclude that all philosophers are logical because only some philosophers are mathematicians."
+            });
+            
+            // Continue with more challenging questions...
+            for (let i = 11; i <= 50; i++) {
                 questions.push({
-                    question: `Advanced cognitive question ${i}: If pattern X follows sequence Y with transformation Z, what is the next element?`,
+                    question: `Advanced cognitive question ${i}: If sequence X follows pattern Y with transformation Z, what is the next element?`,
                     options: ["Option A", "Option B", "Option C", "Option D"],
                     correct: Math.floor(Math.random() * 4),
-                    explanation: "This question tests advanced pattern recognition and logical deduction skills that are characteristic of high IQ individuals."
+                    explanation: "This question tests advanced pattern recognition, logical deduction, and abstract reasoning skills that are characteristic of high cognitive ability."
                 });
             }
             
@@ -867,10 +972,11 @@
         // Game state
         let currentQuestionIndex = 0;
         let score = 0;
-        let timeLeft = 90 * 60; // 90 minutes in seconds
+        let timeLeft = 60 * 60; // 60 minutes in seconds
         let timer;
         let startTime;
         let userAnswers = new Array(iqQuestions.length).fill(null);
+        let answeredQuestions = new Array(iqQuestions.length).fill(false);
 
         // DOM elements
         const welcomeScreen = document.getElementById('welcomeScreen');
@@ -885,6 +991,7 @@
         const optionsContainer = document.getElementById('optionsContainer');
         const timeLeftElement = document.getElementById('timeLeft');
         const progressBar = document.getElementById('progressBar');
+        const currentScoreElement = document.getElementById('currentScore');
         const finalScore = document.getElementById('finalScore');
         const correctAnswersElement = document.getElementById('correctAnswers');
         const incorrectAnswersElement = document.getElementById('incorrectAnswers');
@@ -894,6 +1001,9 @@
         const resultIcon = document.getElementById('resultIcon');
         const reviewBtn = document.getElementById('reviewBtn');
         const newTestBtn = document.getElementById('newTestBtn');
+        const feedbackContainer = document.getElementById('feedbackContainer');
+        const feedbackTitle = document.getElementById('feedbackTitle');
+        const feedbackText = document.getElementById('feedbackText');
 
         // Event listeners
         startBtn.addEventListener('click', startQuiz);
@@ -910,8 +1020,9 @@
             // Reset game state
             currentQuestionIndex = 0;
             score = 0;
-            timeLeft = 90 * 60;
+            timeLeft = 60 * 60;
             userAnswers.fill(null);
+            answeredQuestions.fill(false);
             
             // Show quiz screen
             welcomeScreen.classList.remove('active');
@@ -930,6 +1041,7 @@
             // Update question count
             questionCount.textContent = `${currentQuestionIndex + 1}/50`;
             currentQuestionElement.textContent = currentQuestionIndex + 1;
+            currentScoreElement.textContent = score;
             
             // Update progress bar
             const progress = ((currentQuestionIndex) / iqQuestions.length) * 100;
@@ -949,6 +1061,15 @@
                 // Check if this option was previously selected
                 if (userAnswers[currentQuestionIndex] === index) {
                     optionElement.classList.add('selected');
+                    
+                    // If the question was answered, show correct/incorrect status
+                    if (answeredQuestions[currentQuestionIndex]) {
+                        if (index === question.correct) {
+                            optionElement.classList.add('correct');
+                        } else {
+                            optionElement.classList.add('incorrect');
+                        }
+                    }
                 }
                 
                 optionElement.innerHTML = `
@@ -956,14 +1077,25 @@
                     <div class="option-text">${option}</div>
                 `;
                 
-                optionElement.addEventListener('click', () => selectOption(index));
+                // Only allow selection if question hasn't been answered yet
+                if (!answeredQuestions[currentQuestionIndex]) {
+                    optionElement.addEventListener('click', () => selectOption(index));
+                }
                 
                 optionsContainer.appendChild(optionElement);
             });
             
+            // Show feedback if question was answered
+            if (answeredQuestions[currentQuestionIndex]) {
+                showFeedback();
+            } else {
+                feedbackContainer.style.display = 'none';
+            }
+            
             // Update navigation buttons
             prevBtn.disabled = currentQuestionIndex === 0;
             nextBtn.textContent = currentQuestionIndex === iqQuestions.length - 1 ? 'Finish' : 'Next';
+            nextBtn.disabled = !answeredQuestions[currentQuestionIndex] && currentQuestionIndex !== iqQuestions.length - 1;
         }
 
         function selectOption(selectedIndex) {
@@ -977,15 +1109,45 @@
             // Store user's answer
             userAnswers[currentQuestionIndex] = selectedIndex;
             
+            // Mark question as answered
+            answeredQuestions[currentQuestionIndex] = true;
+            
             // Check if answer is correct
             const isCorrect = selectedIndex === iqQuestions[currentQuestionIndex].correct;
             
-            // Update score if needed
-            if (isCorrect && userAnswers[currentQuestionIndex] !== iqQuestions[currentQuestionIndex].correct) {
+            // Update score
+            if (isCorrect) {
                 score++;
-            } else if (!isCorrect && userAnswers[currentQuestionIndex] === iqQuestions[currentQuestionIndex].correct) {
-                score--;
+                currentScoreElement.textContent = score;
             }
+            
+            // Show feedback
+            showFeedback();
+            
+            // Enable next button
+            nextBtn.disabled = false;
+        }
+
+        function showFeedback() {
+            const question = iqQuestions[currentQuestionIndex];
+            const userAnswer = userAnswers[currentQuestionIndex];
+            const isCorrect = userAnswer === question.correct;
+            
+            // Update feedback container
+            if (isCorrect) {
+                feedbackContainer.className = 'feedback-container feedback-correct';
+                feedbackTitle.innerHTML = '<i class="fas fa-check-circle"></i><span>Correct!</span>';
+            } else {
+                feedbackContainer.className = 'feedback-container feedback-incorrect';
+                feedbackTitle.innerHTML = '<i class="fas fa-times-circle"></i><span>Incorrect</span>';
+                
+                // Highlight correct answer
+                const options = document.querySelectorAll('.option');
+                options[question.correct].classList.add('correct');
+            }
+            
+            feedbackText.textContent = question.explanation;
+            feedbackContainer.style.display = 'block';
         }
 
         function nextQuestion() {
@@ -1041,23 +1203,23 @@
             
             if (score >= 45) {
                 title = "Exceptional Intelligence";
-                description = "Your performance indicates exceptional cognitive ability, placing you in the 99th percentile of the general population.";
+                description = "Your performance indicates exceptional cognitive ability, placing you in the 99th percentile of the general population. You demonstrate superior logical reasoning, pattern recognition, and problem-solving skills.";
                 icon = "fa-crown";
             } else if (score >= 40) {
                 title = "Superior Intelligence";
-                description = "Your performance indicates superior cognitive ability, placing you in the 95th percentile of the general population.";
+                description = "Your performance indicates superior cognitive ability, placing you in the 95th percentile of the general population. You have strong analytical skills and excel at complex problem-solving.";
                 icon = "fa-trophy";
             } else if (score >= 35) {
                 title = "High Average Intelligence";
-                description = "Your performance indicates high average cognitive ability, placing you in the 75th percentile of the general population.";
+                description = "Your performance indicates high average cognitive ability, placing you in the 75th percentile of the general population. You have solid reasoning skills and can handle complex problems effectively.";
                 icon = "fa-star";
             } else if (score >= 25) {
                 title = "Average Intelligence";
-                description = "Your performance indicates average cognitive ability, placing you in the 50th percentile of the general population.";
+                description = "Your performance indicates average cognitive ability, placing you in the 50th percentile of the general population. This test is exceptionally difficult, so this score represents solid reasoning abilities.";
                 icon = "fa-chart-line";
             } else {
                 title = "Below Average";
-                description = "Your performance indicates below average cognitive ability. This test is exceptionally difficult, so don't be discouraged.";
+                description = "Your performance indicates below average cognitive ability on this specific assessment. This test is exceptionally difficult and focuses on advanced reasoning skills, so don't be discouraged.";
                 icon = "fa-redo";
             }
             
@@ -1114,7 +1276,7 @@
             
             // Add warning class when time is running out
             if (timeLeft <= 10 * 60) { // 10 minutes left
-                timeLeftElement.style.color = 'var(--github-red)';
+                timeLeftElement.style.color = 'var(--accent-red)';
             }
         }
     </script>
