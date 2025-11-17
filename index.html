@@ -299,15 +299,16 @@
             animation: fadeIn 1.6s ease-out;
         }
 
-        /* Hero image and caption */
-        .hero-image {
+        /* Video container */
+        .video-container {
+            position: relative;
             width: 100%;
-            height: auto;
+            height: 0;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
             margin: 2rem 0;
-            cursor: pointer;
-            transition: var(--transition);
             box-shadow: var(--shadow);
             border-radius: 4px;
+            overflow: hidden;
             animation: zoomIn 1s ease-out;
         }
 
@@ -322,10 +323,13 @@
             }
         }
 
-        .hero-image:hover {
-            opacity: 0.95;
-            transform: scale(1.01);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
         }
 
         figure {
@@ -439,63 +443,6 @@
         .newsletter-form button:hover {
             background: var(--accent-red);
             transform: translateY(-2px);
-        }
-
-        /* Lightbox modal */
-        .lightbox {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            animation: fadeIn 0.3s ease-out;
-        }
-
-        .lightbox.active {
-            display: flex;
-        }
-
-        .lightbox-img {
-            max-width: 90%;
-            max-height: 80%;
-            object-fit: contain;
-            animation: zoomIn 0.3s ease-out;
-        }
-
-        .lightbox-caption {
-            color: white;
-            font-family: var(--font-sans);
-            margin-top: 1rem;
-            text-align: center;
-            max-width: 80%;
-        }
-
-        .close-lightbox {
-            position: absolute;
-            top: 1rem;
-            right: 1.5rem;
-            color: white;
-            font-size: 2rem;
-            background: none;
-            border: none;
-            cursor: pointer;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1001;
-            transition: var(--transition);
-        }
-
-        .close-lightbox:hover {
-            transform: scale(1.2);
         }
 
         /* Social share buttons */
@@ -654,6 +601,67 @@
             }
         }
 
+        /* Live news indicator */
+        .live-indicator {
+            display: inline-flex;
+            align-items: center;
+            background: var(--accent-red);
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            margin-left: 0.5rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.7;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Article quote */
+        .article-quote {
+            border-left: 4px solid var(--accent-red);
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+            font-style: italic;
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+        }
+
+        /* Video controls styling */
+        .video-controls {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .video-btn {
+            padding: 0.5rem 1rem;
+            background: var(--brand-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-family: var(--font-sans);
+            font-size: 0.875rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .video-btn:hover {
+            background: var(--accent-red);
+            transform: translateY(-2px);
+        }
+
         /* Responsive adjustments */
         @media (max-width: 1024px) {
             .container {
@@ -789,30 +797,35 @@
     <div class="container">
         <main class="main-content">
             <article>
-                <div class="kicker">Community Welcome</div>
-                <h1>Embracing Authenticity: A Warm Welcome to Our Choto Nunu Community</h1>
+                <div class="kicker">Community Welcome <span class="live-indicator">LIVE</span></div>
+                <h1>Embracing Authenticity: A Warm Welcome to Our Choto  Nunu Community</h1>
                 <div class="byline">
                     By <address>Shomokami</address> • 
                     <time datetime="2023-06-15">June 15, 2023</time> • 5 min read
                 </div>
 
                 <figure>
-                    <img 
-                        src="https://i.ibb.co/SXhYSKzV/Nahian-bhai-khuni.png" 
-                        alt="Portrait of Nahian Haque, who has recently come out as gay" 
-                        class="hero-image" 
-                        loading="lazy"
-                        id="heroImage"
-                    >
+                    <div class="video-container">
+                        <iframe src="https://player.vimeo.com/video/1137653023?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
+                                frameborder="0" 
+                                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
+                                referrerpolicy="strict-origin-when-cross-origin" 
+                                title="Nahian Haque - Embracing Authenticity">
+                        </iframe>
+                    </div>
                     <figcaption>
                         <strong>Nahian Haque</strong> • Embracing his true identity with courage and grace
-                        <div class="consent-note">Consent: Photo used with permission.</div>
+                        <div class="consent-note">Consent: Video used with permission.</div>
                     </figcaption>
                 </figure>
 
                 <p class="lead">In a world that often demands conformity, choosing to live authentically is one of the bravest acts of self-love. Today, we celebrate another beautiful soul who has found the courage to embrace his true identity as a gay man.</p>
 
                 <p>Our community grows stronger with each person who brings their whole self to the table. The journey of self-discovery is deeply personal and often challenging, but it's in sharing our authentic selves that we find true connection and belonging. Every new voice enriches our collective experience and reminds us of the beautiful diversity within the LGBTQ community.</p>
+
+                <blockquote class="article-quote">
+                    "Seeing someone like yourself living authentically can be transformative. It sends a powerful message that you are not alone and that your identity is valid and celebrated."
+                </blockquote>
 
                 <p>To our friend Nahian who has joined us: your presence matters. Your story matters. The unique perspective you bring adds depth to our conversations and strength to our community. While everyone's path looks different, what unites us is the shared understanding of what it means to seek and honor our truth.</p>
 
@@ -957,13 +970,6 @@
         </div>
     </footer>
 
-    <!-- Lightbox Modal -->
-    <div class="lightbox" id="lightbox" role="dialog" aria-label="Image zoom view" aria-hidden="true">
-        <button class="close-lightbox" id="closeLightbox" aria-label="Close image view">&times;</button>
-        <img src="" alt="" class="lightbox-img" id="lightboxImg">
-        <div class="lightbox-caption" id="lightboxCaption"></div>
-    </div>
-
     <script>
         // Mobile menu functionality
         document.addEventListener('DOMContentLoaded', function() {
@@ -978,46 +984,6 @@
             document.addEventListener('click', function(event) {
                 if (!event.target.closest('.main-nav') && !event.target.closest('.mobile-menu-btn')) {
                     navLinks.classList.remove('active');
-                }
-            });
-            
-            // Lightbox functionality
-            const heroImage = document.getElementById('heroImage');
-            const lightbox = document.getElementById('lightbox');
-            const lightboxImg = document.getElementById('lightboxImg');
-            const lightboxCaption = document.getElementById('lightboxCaption');
-            const closeLightbox = document.getElementById('closeLightbox');
-            
-            // Open lightbox when hero image is clicked
-            heroImage.addEventListener('click', function() {
-                lightboxImg.src = this.src;
-                lightboxImg.alt = this.alt;
-                lightboxCaption.textContent = this.nextElementSibling.textContent;
-                lightbox.classList.add('active');
-                lightbox.setAttribute('aria-hidden', 'false');
-                document.body.style.overflow = 'hidden'; // Prevent scrolling
-            });
-            
-            // Close lightbox
-            function closeLightboxFunc() {
-                lightbox.classList.remove('active');
-                lightbox.setAttribute('aria-hidden', 'true');
-                document.body.style.overflow = ''; // Restore scrolling
-            }
-            
-            closeLightbox.addEventListener('click', closeLightboxFunc);
-            
-            // Close lightbox when clicking outside the image
-            lightbox.addEventListener('click', function(e) {
-                if (e.target === lightbox) {
-                    closeLightboxFunc();
-                }
-            });
-            
-            // Close lightbox with Escape key
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape' && lightbox.classList.contains('active')) {
-                    closeLightboxFunc();
                 }
             });
             
@@ -1056,6 +1022,25 @@
                     document.querySelector('.loading-bar').style.display = 'none';
                 }, 500);
             });
+            
+            // Add live indicator animation
+            const liveIndicator = document.querySelector('.live-indicator');
+            if (liveIndicator) {
+                setInterval(function() {
+                    liveIndicator.style.animation = 'none';
+                    setTimeout(function() {
+                        liveIndicator.style.animation = 'pulse 2s infinite';
+                    }, 10);
+                }, 4000);
+            }
+            
+            // Video interaction tracking
+            const videoIframe = document.querySelector('.video-container iframe');
+            if (videoIframe) {
+                // Note: Due to cross-origin restrictions, we can't directly control Vimeo iframe
+                // In a real implementation, you would use the Vimeo Player API
+                console.log('Video embedded successfully');
+            }
         });
     </script>
 </body>
