@@ -3,43 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Global News Network | Embracing Authenticity: A Community Welcome</title>
-    <meta name="description" content="Global News Network - A warm welcome and celebration of identity and belonging in our LGBTQ community.">
-    
-    <!-- Open Graph / Social Media Meta Tags -->
-    <meta property="og:title" content="Embracing Authenticity: A Community Welcome | Global News Network">
-    <meta property="og:description" content="A warm welcome and celebration of identity and belonging in our LGBTQ community.">
+    <title>Global News Network | Embracing Authenticity: Two Journeys, One Community</title>
+    <meta name="description" content="Global News Network - A warm welcome and celebration of identity and belonging in our LGBTQ community. Meet Nahian Haque and Fazle Rabbi.">
+
+    <meta property="og:title" content="Embracing Authenticity: Two Journeys, One Community | Global News Network">
+    <meta property="og:description" content="A celebration of identity, courage, and belonging. Watch the stories of Nahian Haque and Fazle Rabbi.">
     <meta property="og:image" content="https://i.ibb.co/SXhYSKzV/Nahian-bhai-khuni.png">
     <meta property="og:url" content="https://shomokami.com/">
     <meta property="og:type" content="article">
-    
-    <!-- Twitter Card Meta Tags -->
+
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Embracing Authenticity: A Community Welcome">
-    <meta name="twitter:description" content="A warm welcome and celebration of identity and belonging in our LGBTQ community.">
+    <meta name="twitter:title" content="Embracing Authenticity: Two Journeys, One Community">
+    <meta name="twitter:description" content="A celebration of identity, courage, and belonging. Watch the stories of Nahian Haque and Fazle Rabbi.">
     <meta name="twitter:image" content="https://i.ibb.co/SXhYSKzV/Nahian-bhai-khuni.png">
-    
+
     <style>
-        /* CSS Variables for theming */
         :root {
-            --primary-color: #000;
-            --secondary-color: #333;
-            --accent-color: #555;
-            --background-color: #fff;
-            --text-color: #000;
-            --muted-color: #666;
-            --border-color: #e0e0e0;
-            --shadow: 0 2px 8px rgba(0,0,0,0.1);
-            --max-content-width: 1200px;
-            --font-serif: 'Times New Roman', Times, serif;
-            --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            --brand-color: #183152;
-            --accent-red: #8B0000;
-            --transition: all 0.3s ease;
+            --ink: #1a1a1a;
+            --ink-light: #4a4a4a;
+            --ink-lighter: #6e6e6e;
+            --accent: #8B0000;
+            --accent-deep: #5c0000;
+            --bg: #fefefe;
+            --bg-warm: #f9f7f4;
+            --bg-paper: #fdfdfc;
+            --border: #c8c4bc;
+            --border-light: #e3ded7;
+            --border-rule: #2b2b2b;
+            --font-display: 'Georgia', 'Times New Roman', Times, serif;
+            --font-body: 'Georgia', 'Times New Roman', Times, serif;
+            --font-sans: 'Helvetica Neue', 'Segoe UI', Roboto, Arial, sans-serif;
+            --shadow-card: 0 1px 4px rgba(0, 0, 0, 0.06);
+            --shadow-raised: 0 3px 10px rgba(0, 0, 0, 0.09);
+            --max-width: 1280px;
+            --radius: 2px;
+            --transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
         }
 
-        /* Base styles */
-        * {
+        *,
+        *::before,
+        *::after {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -47,283 +50,369 @@
 
         html {
             font-size: 18px;
-            line-height: 1.6;
             scroll-behavior: smooth;
+            background-color: #f5f3ef;
         }
 
         body {
-            font-family: var(--font-serif);
-            color: var(--text-color);
-            background-color: var(--background-color);
-            transition: var(--transition);
-            overflow-x: hidden;
+            font-family: var(--font-body);
+            color: var(--ink);
+            background: var(--bg-warm);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            min-height: 100vh;
         }
 
-        /* Header styles */
-        .site-header {
-            border-bottom: 2px solid var(--primary-color);
-            padding: 1rem 0;
-            margin-bottom: 2rem;
+        /* ── TOP RIBBON ── */
+        .top-ribbon {
+            background: #1a1a1a;
+            color: #d4d4d4;
+            font-family: var(--font-sans);
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.4px;
+            padding: 0.35rem 0;
+            border-bottom: 1px solid #333;
+        }
+        .top-ribbon-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 1.25rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .top-ribbon a {
+            color: #bbb;
+            text-decoration: none;
+            margin-left: 1.4rem;
+            transition: var(--transition);
+            font-size: 0.7rem;
+        }
+        .top-ribbon a:hover {
+            color: #fff;
+        }
+        .live-dateline {
+            font-weight: 400;
+            color: #ccc;
+        }
+
+        /* ── MASTHEAD ── */
+        .masthead {
+            background: #fff;
+            border-bottom: 1px solid var(--border-light);
+            padding: 1.2rem 0 0.8rem;
+        }
+        .masthead-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 1.25rem;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .brand-block {
+            display: flex;
+            flex-direction: column;
+        }
+        .newspaper-name {
+            font-family: 'Times New Roman', 'Georgia', serif;
+            font-size: 2.9rem;
+            font-weight: 700;
+            color: #000;
+            text-decoration: none;
+            line-height: 1;
+            letter-spacing: -0.5px;
+            text-rendering: optimizeLegibility;
+        }
+        .newspaper-name .accent-dot {
+            color: var(--accent);
+        }
+        .motto {
+            font-family: var(--font-sans);
+            font-size: 0.68rem;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            color: #666;
+            margin-top: 0.15rem;
+            font-weight: 500;
+        }
+        .masthead-meta {
+            display: flex;
+            align-items: center;
+            gap: 1.8rem;
+            font-family: var(--font-sans);
+            font-size: 0.8rem;
+            color: #444;
+            font-weight: 500;
+        }
+        .masthead-meta .divider {
+            color: #ccc;
+        }
+        .edition-badge {
+            background: #f0f0f0;
+            padding: 0.2rem 0.7rem;
+            border-radius: 1px;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            font-size: 0.72rem;
+            color: #333;
+        }
+
+        /* ── NAVIGATION ── */
+        .nav-bar {
+            background: #fff;
+            border-bottom: 2px solid #000;
             position: sticky;
             top: 0;
-            background: white;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 60;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+        .nav-bar-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 1.25rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-list {
+            display: flex;
+            list-style: none;
+            font-family: var(--font-sans);
+            font-size: 0.78rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+            overflow-x: auto;
+            white-space: nowrap;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .nav-list::-webkit-scrollbar {
+            display: none;
+        }
+        .nav-list li {
+            flex-shrink: 0;
+        }
+        .nav-list a {
+            color: #000;
+            text-decoration: none;
+            padding: 0.85rem 0.9rem;
+            display: block;
+            border-bottom: 3px solid transparent;
+            transition: var(--transition);
+            position: relative;
+        }
+        .nav-list a:hover,
+        .nav-list a.active {
+            color: var(--accent);
+            border-bottom-color: var(--accent);
+        }
+        .nav-search {
+            width: 28px;
+            height: 28px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            color: #333;
+            transition: var(--transition);
+        }
+        .nav-search svg {
+            width: 18px;
+            height: 18px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+        }
+        .nav-search:hover {
+            color: var(--accent);
         }
 
-        .header-container {
-            max-width: var(--max-content-width);
-            margin: 0 auto;
-            padding: 0 1rem;
+        /* ── NEWS TICKER ── */
+        .ticker-bar {
+            background: #fff;
+            border-bottom: 1px solid var(--border-light);
+            overflow: hidden;
+            font-family: var(--font-sans);
+            font-size: 0.76rem;
+            font-weight: 600;
+            padding: 0.38rem 0;
+            letter-spacing: 0.2px;
+        }
+        .ticker-track {
+            display: flex;
+            animation: tickerScroll 38s linear infinite;
+            white-space: nowrap;
+            will-change: transform;
+        }
+        .ticker-item {
+            display: inline-block;
+            padding-right: 3.5rem;
+            color: #222;
+        }
+        .ticker-item .tag {
+            color: var(--accent);
+            font-weight: 700;
+            margin-right: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+        }
+        @keyframes tickerScroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* ── MAIN LAYOUT ── */
+        .page-layout {
+            max-width: var(--max-width);
+            margin: 1.8rem auto;
+            padding: 0 1.25rem;
+            display: grid;
+            grid-template-columns: 1fr 330px;
+            gap: 2rem;
+        }
+
+        /* ── ARTICLE CARD ── */
+        .article-card {
+            background: #fff;
+            padding: 2.5rem 2.8rem;
+            box-shadow: var(--shadow-card);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius);
+        }
+        .section-kicker {
+            font-family: var(--font-sans);
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.3px;
+            color: var(--accent);
+            margin-bottom: 0.6rem;
+            display: inline-block;
+        }
+        .headline {
+            font-family: var(--font-display);
+            font-size: 2.65rem;
+            font-weight: 700;
+            line-height: 1.14;
+            margin-bottom: 1rem;
+            color: #000;
+            text-rendering: optimizeLegibility;
+        }
+        .byline-row {
+            font-family: var(--font-sans);
+            font-size: 0.8rem;
+            color: #555;
+            border-bottom: 1px solid #e5e0d9;
+            padding-bottom: 1rem;
+            margin-bottom: 1.6rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
+            gap: 0.6rem;
         }
-
-        .logo {
-            font-family: var(--font-sans);
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--brand-color);
-            text-decoration: none;
-            letter-spacing: -1px;
-            transition: var(--transition);
-        }
-
-        .logo:hover {
-            transform: scale(1.02);
-        }
-
-        .date-nav {
-            font-family: var(--font-sans);
-            font-size: 0.9rem;
-            color: var(--muted-color);
+        .byline-meta {
             display: flex;
+            gap: 1.2rem;
             align-items: center;
-            gap: 1rem;
         }
-
-        .date-nav button {
+        .byline-meta .author-name {
+            font-weight: 700;
+            color: #222;
+        }
+        .share-tools {
+            display: flex;
+            gap: 0.4rem;
+        }
+        .share-tools button {
             background: none;
-            border: none;
-            color: var(--muted-color);
+            border: 1px solid #c5bfb5;
+            border-radius: 2px;
+            padding: 0.3rem 0.8rem;
+            font-size: 0.7rem;
+            font-weight: 600;
+            font-family: var(--font-sans);
             cursor: pointer;
-            font-size: 1.2rem;
             transition: var(--transition);
-        }
-
-        .date-nav button:hover {
-            color: var(--accent-red);
-        }
-
-        .main-nav {
-            width: 100%;
-            margin-top: 1rem;
-            border-top: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
-            padding: 0.5rem 0;
-            overflow-x: auto;
-            white-space: nowrap;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            justify-content: space-between;
-            font-family: var(--font-sans);
-            font-size: 0.9rem;
-            font-weight: 600;
+            color: #444;
+            letter-spacing: 0.3px;
             text-transform: uppercase;
         }
-
-        .nav-links li {
-            margin: 0 0.5rem;
+        .share-tools button:hover {
+            background: #f5f2ed;
+            border-color: #999;
+            color: #000;
         }
-
-        .nav-links a {
-            color: var(--text-color);
-            text-decoration: none;
-            transition: var(--transition);
-            padding: 0.25rem 0.5rem;
-            border-radius: 4px;
-        }
-
-        .nav-links a:hover {
-            color: var(--accent-red);
-            background: rgba(139, 0, 0, 0.05);
-        }
-
-        /* Breaking News Ticker */
-        .breaking-news {
-            background: var(--accent-red);
-            color: white;
-            padding: 0.5rem 0;
-            overflow: hidden;
-            position: relative;
-            margin-bottom: 1rem;
-        }
-
-        .breaking-news-content {
-            display: flex;
-            align-items: center;
-            white-space: nowrap;
-            animation: ticker 30s linear infinite;
-        }
-
-        .breaking-label {
-            background: white;
-            color: var(--accent-red);
-            padding: 0.25rem 0.75rem;
-            font-weight: bold;
-            margin-right: 1rem;
-            font-family: var(--font-sans);
-            font-size: 0.8rem;
-        }
-
-        .breaking-text {
-            font-family: var(--font-sans);
-            font-size: 0.9rem;
-        }
-
-        @keyframes ticker {
-            0% {
-                transform: translateX(100%);
-            }
-            100% {
-                transform: translateX(-100%);
-            }
-        }
-
-        /* Main layout */
-        .container {
-            max-width: var(--max-content-width);
-            margin: 0 auto;
-            padding: 0 1rem;
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 2rem;
-            animation: fadeIn 0.8s ease-out;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Typography */
-        h1 {
-            font-size: 3rem;
-            line-height: 1.1;
+        .drop-cap::first-letter {
+            float: left;
+            font-size: 4.6rem;
+            line-height: 0.85;
+            margin-right: 0.55rem;
+            margin-top: 0.1rem;
             font-weight: 700;
-            margin: 1.5rem 0 1rem;
-            color: var(--primary-color);
-            animation: slideInFromLeft 0.8s ease-out;
+            color: #000;
+            font-family: var(--font-display);
         }
-
-        @keyframes slideInFromLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        h2 {
-            font-size: 1.5rem;
-            margin: 2rem 0 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px solid var(--border-color);
-            animation: slideInFromRight 0.8s ease-out;
-        }
-
-        @keyframes slideInFromRight {
-            from {
-                opacity: 0;
-                transform: translateX(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        h3 {
+        .lead-graf {
             font-size: 1.25rem;
-            margin: 1.5rem 0 0.5rem;
+            font-weight: 400;
+            color: #2b2b2b;
+            margin-bottom: 1.6rem;
+            font-style: italic;
+            line-height: 1.6;
+        }
+        .body-graf {
+            margin-bottom: 1.3rem;
+            font-size: 1.02rem;
+            line-height: 1.75;
+            color: #1f1f1f;
+        }
+        .pull-quote {
+            border-left: 5px solid var(--accent);
+            padding: 0.7rem 1.6rem;
+            margin: 2rem 0;
+            font-style: italic;
+            color: #333;
+            background: #faf9f7;
+            font-size: 1.18rem;
+            line-height: 1.55;
+        }
+        .section-head {
+            font-family: var(--font-display);
+            font-size: 1.7rem;
+            font-weight: 700;
+            margin: 2rem 0 0.8rem;
+            color: #000;
+            letter-spacing: -0.2px;
         }
 
-        .kicker {
-            font-family: var(--font-sans);
-            font-size: 0.875rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--accent-red);
-            margin-bottom: 0.5rem;
-            animation: fadeIn 1s ease-out;
+        /* ── VIDEO COMPONENT ── */
+        .video-module {
+            background: #fff;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius);
+            margin: 2rem 0;
+            box-shadow: var(--shadow-card);
+            overflow: hidden;
         }
-
-        .byline {
-            font-family: var(--font-sans);
-            font-size: 0.9rem;
-            color: var(--muted-color);
-            margin-bottom: 1.5rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid var(--border-color);
-            animation: fadeIn 1.2s ease-out;
-        }
-
-        .lead {
-            font-size: 1.35rem;
-            font-weight: 500;
-            margin: 1.5rem 0;
-            color: var(--secondary-color);
-            font-family: var(--font-serif);
-            animation: fadeIn 1.4s ease-out;
-        }
-
-        p {
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
-            line-height: 1.7;
-            animation: fadeIn 1.6s ease-out;
-        }
-
-        /* Video container */
-        .video-container {
+        .video-embed {
             position: relative;
             width: 100%;
-            height: 0;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
-            margin: 2rem 0;
-            box-shadow: var(--shadow);
-            border-radius: 4px;
-            overflow: hidden;
-            animation: zoomIn 1s ease-out;
+            padding-bottom: 56.25%;
+            background: #000;
         }
-
-        @keyframes zoomIn {
-            from {
-                opacity: 0;
-                transform: scale(0.95);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        .video-container iframe {
+        .video-embed iframe {
             position: absolute;
             top: 0;
             left: 0;
@@ -331,717 +420,608 @@
             height: 100%;
             border: none;
         }
-
-        figure {
-            margin: 2rem 0;
-        }
-
-        figcaption {
+        .video-credit {
+            padding: 0.9rem 1.2rem;
             font-family: var(--font-sans);
-            font-size: 0.875rem;
-            color: var(--muted-color);
-            margin-top: 0.5rem;
-            line-height: 1.4;
-            text-align: center;
+            font-size: 0.78rem;
+            color: #555;
+            border-top: 1px solid #eae5de;
+            background: #fdfdfc;
         }
-
-        .consent-note {
-            font-size: 0.75rem;
-            font-style: italic;
-            margin-top: 0.25rem;
-        }
-
-        /* Sidebar */
-        .sidebar {
-            border-left: 1px solid var(--border-color);
-            padding-left: 2rem;
-            animation: slideInFromRight 0.8s ease-out;
-        }
-
-        .trending-list {
-            list-style: none;
-            margin-top: 1rem;
-        }
-
-        .trending-list li {
-            margin-bottom: 1rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid var(--border-color);
-            transition: var(--transition);
-        }
-
-        .trending-list li:hover {
-            transform: translateX(5px);
-        }
-
-        .trending-list a {
-            color: var(--text-color);
-            text-decoration: none;
-            font-weight: 500;
+        .video-credit .subject-name {
             display: block;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 0.15rem;
+            font-family: var(--font-display);
         }
-
-        .trending-list a:hover {
-            color: var(--accent-red);
-        }
-
-        .trending-meta {
-            font-size: 0.8rem;
-            color: var(--muted-color);
+        .permission-note {
+            font-size: 0.68rem;
+            color: #888;
             margin-top: 0.25rem;
+            font-style: italic;
         }
 
-        .newsletter-signup {
-            background: #f5f5f5;
-            padding: 1.5rem;
-            margin: 2rem 0;
-            border-radius: 4px;
-            transition: var(--transition);
-        }
-
-        .newsletter-signup:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .newsletter-signup h3 {
-            margin-top: 0;
-        }
-
-        .newsletter-signup p {
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-
-        .newsletter-form input {
-            width: 100%;
-            padding: 0.75rem;
-            margin-bottom: 0.5rem;
-            border: 1px solid var(--border-color);
-            font-family: var(--font-sans);
-            transition: var(--transition);
-        }
-
-        .newsletter-form input:focus {
-            outline: none;
-            border-color: var(--accent-red);
-            box-shadow: 0 0 0 2px rgba(139, 0, 0, 0.1);
-        }
-
-        .newsletter-form button {
-            width: 100%;
-            padding: 0.75rem;
-            background: var(--brand-color);
-            color: white;
-            border: none;
-            font-family: var(--font-sans);
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .newsletter-form button:hover {
-            background: var(--accent-red);
-            transform: translateY(-2px);
-        }
-
-        /* Social share buttons */
-        .social-share {
+        /* ── SIDEBAR ── */
+        .sidebar-col {
             display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin: 2rem 0;
-            padding: 1.5rem 0;
-            border-top: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
-            animation: fadeIn 1.8s ease-out;
+            flex-direction: column;
+            gap: 1.6rem;
         }
-
-        .share-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0.5rem 1rem;
-            border: 1px solid var(--border-color);
-            border-radius: 4px;
-            background: var(--background-color);
-            color: var(--text-color);
-            text-decoration: none;
+        .sidebar-box {
+            background: #fff;
+            padding: 1.4rem 1.5rem;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-card);
+        }
+        .sidebar-box h3 {
             font-family: var(--font-sans);
-            font-size: 0.875rem;
-            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.7px;
+            border-bottom: 2px solid #000;
+            padding-bottom: 0.55rem;
+            margin-bottom: 1rem;
+            color: #000;
+        }
+        .trending-items {
+            list-style: none;
+        }
+        .trending-items li {
+            margin-bottom: 0.9rem;
+            padding-bottom: 0.9rem;
+            border-bottom: 1px solid #ece7df;
+        }
+        .trending-items li:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        .trending-items a {
+            text-decoration: none;
+            color: #1a1a1a;
+            font-weight: 600;
+            font-size: 0.87rem;
+            line-height: 1.35;
             transition: var(--transition);
         }
-
-        .share-btn:hover, .share-btn:focus {
-            background: var(--border-color);
-            outline: none;
-            transform: translateY(-3px);
+        .trending-items a:hover {
+            color: var(--accent);
+        }
+        .trending-label {
+            font-size: 0.68rem;
+            color: #777;
+            margin-top: 0.2rem;
+            font-family: var(--font-sans);
+        }
+        .newsletter-signup {
+            background: #f5f2ed;
+            padding: 1.3rem;
+            text-align: center;
+            border-radius: var(--radius);
+            border: 1px solid #e0dbd3;
+        }
+        .newsletter-signup h3 {
+            border-bottom: none;
+            margin-bottom: 0.4rem;
+            padding-bottom: 0;
+            font-size: 0.88rem;
+        }
+        .newsletter-signup p {
+            font-size: 0.78rem;
+            color: #555;
+            margin-bottom: 0.8rem;
+            font-family: var(--font-sans);
+        }
+        .newsletter-signup input {
+            width: 100%;
+            padding: 0.65rem;
+            margin-bottom: 0.5rem;
+            border: 1px solid #c5bfb5;
+            font-family: var(--font-sans);
+            font-size: 0.8rem;
+            border-radius: 2px;
+            background: #fff;
+        }
+        .newsletter-signup button {
+            width: 100%;
+            padding: 0.65rem;
+            background: #1a1a1a;
+            color: #fff;
+            border: none;
+            font-weight: 600;
+            font-family: var(--font-sans);
+            font-size: 0.8rem;
+            cursor: pointer;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            transition: var(--transition);
+            border-radius: 2px;
+        }
+        .newsletter-signup button:hover {
+            background: var(--accent);
+        }
+        .opinion-snippet {
+            font-size: 0.88rem;
+            font-style: italic;
+            color: #333;
+            line-height: 1.5;
+        }
+        .opinion-snippet .attribution {
+            display: block;
+            font-size: 0.72rem;
+            color: #888;
+            margin-top: 0.4rem;
+            font-style: normal;
+            font-family: var(--font-sans);
         }
 
-        /* Footer */
-        .site-footer {
-            background: #f5f5f5;
-            margin-top: 4rem;
-            padding: 2rem 0;
-            border-top: 2px solid var(--primary-color);
-            animation: fadeIn 2s ease-out;
+        /* ── RELATED STORIES ── */
+        .related-stories {
+            max-width: var(--max-width);
+            margin: 0 auto 2rem;
+            padding: 2rem 1.25rem;
+            background: #fff;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-card);
+        }
+        .related-stories h2 {
+            font-family: var(--font-display);
+            font-size: 1.55rem;
+            font-weight: 700;
+            border-bottom: 2px solid #000;
+            display: inline-block;
+            padding-bottom: 0.3rem;
+            margin-bottom: 1.5rem;
+            color: #000;
+            letter-spacing: -0.3px;
+        }
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.8rem;
+        }
+        .related-card {
+            padding-right: 1.5rem;
+            border-right: 1px solid #e5e0d9;
+        }
+        .related-card:last-child {
+            border-right: none;
+            padding-right: 0;
+        }
+        .related-card .tag-kicker {
+            font-family: var(--font-sans);
+            font-size: 0.68rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent);
+        }
+        .related-card h4 {
+            font-family: var(--font-display);
+            font-size: 1.08rem;
+            margin: 0.35rem 0;
+            color: #000;
+        }
+        .related-card p {
+            font-size: 0.82rem;
+            color: #555;
+            line-height: 1.5;
         }
 
-        .footer-container {
-            max-width: var(--max-content-width);
+        /* ── FOOTER ── */
+        .page-footer {
+            background: #1a1a1a;
+            color: #b0b0b0;
+            margin-top: 3rem;
+            padding: 2.5rem 1.25rem;
+            font-family: var(--font-sans);
+            border-top: 3px solid #333;
+        }
+        .footer-grid {
+            max-width: var(--max-width);
             margin: 0 auto;
-            padding: 0 1rem;
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 2rem;
         }
-
-        .footer-section h3 {
-            font-size: 1rem;
+        .footer-col h4 {
+            color: #fff;
             margin-bottom: 1rem;
-            font-family: var(--font-sans);
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            font-weight: 700;
         }
-
-        .footer-links {
+        .footer-col ul {
             list-style: none;
         }
-
-        .footer-links li {
-            margin-bottom: 0.5rem;
-            transition: var(--transition);
+        .footer-col li {
+            margin-bottom: 0.45rem;
         }
-
-        .footer-links li:hover {
-            transform: translateX(3px);
-        }
-
-        .footer-links a {
-            color: var(--muted-color);
+        .footer-col a {
+            color: #999;
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 0.76rem;
+            transition: var(--transition);
         }
-
-        .footer-links a:hover {
-            color: var(--accent-red);
+        .footer-col a:hover {
+            color: #fff;
         }
-
-        .copyright {
-            grid-column: 1 / -1;
+        .footer-bottom {
+            max-width: var(--max-width);
+            margin: 2rem auto 0;
+            padding-top: 1.4rem;
+            border-top: 1px solid #333;
             text-align: center;
-            margin-top: 2rem;
-            padding-top: 1rem;
-            border-top: 1px solid var(--border-color);
-            font-size: 0.8rem;
-            color: var(--muted-color);
-        }
-
-        /* Related articles */
-        .related-articles {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-            margin: 3rem 0;
-            animation: fadeIn 2s ease-out;
-        }
-
-        .related-article {
-            border: 1px solid var(--border-color);
-            padding: 1rem;
-            transition: var(--transition);
-            border-radius: 4px;
-        }
-
-        .related-article:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .related-article h3 {
-            margin-top: 0.5rem;
-            font-size: 1.1rem;
-        }
-
-        .related-article p {
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
-        }
-
-        /* Mobile menu button */
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: var(--text-color);
-        }
-
-        /* Loading animation */
-        .loading-bar {
-            height: 3px;
-            background: linear-gradient(90deg, var(--accent-red), var(--brand-color));
-            width: 0%;
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 101;
-            animation: loading 2s ease-in-out infinite;
-        }
-
-        @keyframes loading {
-            0% {
-                width: 0%;
-            }
-            50% {
-                width: 70%;
-            }
-            100% {
-                width: 100%;
-            }
-        }
-
-        /* Live news indicator */
-        .live-indicator {
-            display: inline-flex;
-            align-items: center;
-            background: var(--accent-red);
-            color: white;
-            padding: 0.25rem 0.5rem;
-            border-radius: 4px;
             font-size: 0.7rem;
-            font-weight: bold;
-            margin-left: 0.5rem;
-            animation: pulse 2s infinite;
+            color: #777;
+            letter-spacing: 0.3px;
         }
 
-        @keyframes pulse {
-            0% {
-                opacity: 1;
-            }
-            50% {
-                opacity: 0.7;
-            }
-            100% {
-                opacity: 1;
-            }
-        }
-
-        /* Article quote */
-        .article-quote {
-            border-left: 4px solid var(--accent-red);
-            padding-left: 1.5rem;
-            margin: 2rem 0;
-            font-style: italic;
-            color: var(--secondary-color);
-            font-size: 1.2rem;
-        }
-
-        /* Video controls styling */
-        .video-controls {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .video-btn {
-            padding: 0.5rem 1rem;
-            background: var(--brand-color);
-            color: white;
-            border: none;
-            border-radius: 4px;
-            font-family: var(--font-sans);
-            font-size: 0.875rem;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .video-btn:hover {
-            background: var(--accent-red);
-            transform: translateY(-2px);
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 1024px) {
-            .container {
+        /* ── RESPONSIVE ── */
+        @media (max-width: 960px) {
+            .page-layout {
                 grid-template-columns: 1fr;
             }
-            
-            .sidebar {
-                border-left: none;
-                padding-left: 0;
-                border-top: 1px solid var(--border-color);
-                padding-top: 2rem;
+            .article-card {
+                padding: 1.8rem;
             }
-            
-            .footer-container {
-                grid-template-columns: repeat(2, 1fr);
+            .headline {
+                font-size: 2rem;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .related-card {
+                border-right: none;
+                margin-bottom: 1.2rem;
+                padding-right: 0;
             }
         }
-
-        @media (max-width: 768px) {
-            html {
-                font-size: 16px;
+        @media (max-width: 600px) {
+            .nav-list {
+                font-size: 0.68rem;
             }
-            
-            h1 {
-                font-size: 2.25rem;
+            .nav-list a {
+                padding: 0.7rem 0.55rem;
             }
-            
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background: white;
-                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-                z-index: 99;
-            }
-            
-            .nav-links.active {
-                display: flex;
-            }
-            
-            .nav-links li {
-                margin: 0;
-                border-bottom: 1px solid var(--border-color);
-            }
-            
-            .nav-links a {
-                display: block;
-                padding: 1rem;
-            }
-            
-            .mobile-menu-btn {
-                display: block;
-            }
-            
-            .related-articles {
-                grid-template-columns: 1fr;
-            }
-            
-            .header-container {
+            .byline-row {
                 flex-direction: column;
                 align-items: flex-start;
             }
-            
-            .date-nav {
-                margin-top: 0.5rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 1.75rem;
-            }
-            
-            .social-share {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .share-btn {
-                width: 100%;
-                max-width: 200px;
-            }
-            
-            .footer-container {
+            .footer-grid {
                 grid-template-columns: 1fr;
             }
-            
-            .logo {
-                font-size: 2rem;
+            .headline {
+                font-size: 1.7rem;
+            }
+            .article-card {
+                padding: 1.3rem;
+            }
+            .masthead-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+        @media print {
+            .nav-bar,
+            .top-ribbon,
+            .ticker-bar,
+            .sidebar-col,
+            .page-footer,
+            .related-stories,
+            .share-tools {
+                display: none;
+            }
+            body {
+                background: #fff;
+            }
+            .article-card {
+                box-shadow: none;
+                border: none;
+                padding: 0;
+            }
+            .page-layout {
+                grid-template-columns: 1fr;
+                max-width: 100%;
             }
         }
     </style>
 </head>
 <body>
-    <div class="loading-bar"></div>
 
-    <header class="site-header">
-        <div class="header-container">
-            <a href="#" class="logo">Global News Network</a>
-            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
-            <div class="date-nav">
-                <button aria-label="Previous day">←</button>
-                <time datetime="2023-06-15">Thursday, June 15, 2023</time>
-                <button aria-label="Next day">→</button>
+    <!-- Top Ribbon -->
+    <div class="top-ribbon">
+        <div class="top-ribbon-inner">
+            <span class="live-dateline" id="datelineDisplay"></span>
+            <div>
+                <a href="#">Subscribe</a>
+                <a href="#">ePaper</a>
+                <a href="#">Sign In</a>
             </div>
-            <nav class="main-nav">
-                <ul class="nav-links" id="navLinks">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Politics</a></li>
-                    <li><a href="#">Business</a></li>
-                    <li><a href="#">Technology</a></li>
-                    <li><a href="#">Culture</a></li>
-                    <li><a href="#">Opinion</a></li>
-                    <li><a href="#">Science</a></li>
-                    <li><a href="#">Health</a></li>
-                    <li><a href="#">Sports</a></li>
-                    <li><a href="#">Arts</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <div class="breaking-news">
-        <div class="breaking-news-content">
-            <span class="breaking-label">BREAKING</span>
-            <span class="breaking-text">Community welcomes Nahian Haque as he shares his journey of self-discovery and authenticity • Local LGBTQ center expands support services • Pride Month events continue through weekend</span>
         </div>
     </div>
 
-    <div class="container">
-        <main class="main-content">
+    <!-- Masthead -->
+    <header class="masthead">
+        <div class="masthead-inner">
+            <div class="brand-block">
+                <a href="#" class="newspaper-name">Global News<span class="accent-dot">.</span>Network</a>
+                <span class="motto">Truth &middot; Integrity &middot; Community</span>
+            </div>
+            <div class="masthead-meta">
+                <span>New York &mdash; Partly Cloudy 72&deg;F</span>
+                <span class="divider">|</span>
+                <span class="edition-badge">U.S. Edition</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <div class="nav-bar" id="navBar">
+        <nav class="nav-bar-inner">
+            <ul class="nav-list">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Politics</a></li>
+                <li><a href="#">World</a></li>
+                <li><a href="#">Business</a></li>
+                <li><a href="#">Technology</a></li>
+                <li><a href="#">Culture</a></li>
+                <li><a href="#">Opinion</a></li>
+                <li><a href="#" class="active">LGBTQ+</a></li>
+                <li><a href="#">Video</a></li>
+            </ul>
+            <div class="nav-search" title="Search">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="10.5" cy="10.5" r="7"/>
+                    <line x1="15.5" y1="15.5" x2="21" y2="21"/>
+                </svg>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Ticker -->
+    <div class="ticker-bar">
+        <div class="ticker-track">
+            <span class="ticker-item"><span class="tag">Breaking</span>Pride Month celebrations draw record crowds across the nation</span>
+            <span class="ticker-item"><span class="tag">Community</span>Nahian Haque shares his journey of authenticity and self-discovery</span>
+            <span class="ticker-item"><span class="tag">New Voices</span>Fazle Rabbi opens up about living his truth with courage</span>
+            <span class="ticker-item"><span class="tag">Local</span>LGBTQ center expands mental health services for young adults</span>
+            <span class="ticker-item"><span class="tag">Pride</span>Events continue through weekend across the metropolitan area</span>
+            <!-- Duplicate set for seamless looping -->
+            <span class="ticker-item"><span class="tag">Breaking</span>Pride Month celebrations draw record crowds across the nation</span>
+            <span class="ticker-item"><span class="tag">Community</span>Nahian Haque shares his journey of authenticity and self-discovery</span>
+            <span class="ticker-item"><span class="tag">New Voices</span>Fazle Rabbi opens up about living his truth with courage</span>
+            <span class="ticker-item"><span class="tag">Local</span>LGBTQ center expands mental health services for young adults</span>
+            <span class="ticker-item"><span class="tag">Pride</span>Events continue through weekend across the metropolitan area</span>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="page-layout">
+        <main class="article-card">
             <article>
-                <div class="kicker">Community Welcome <span class="live-indicator">LIVE</span></div>
-                <h1>Embracing Authenticity: A Warm Welcome to Our Choto  Nunu Community</h1>
-                <div class="byline">
-                    By <address>Shomokami</address> • 
-                    <time datetime="2023-06-15">June 15, 2023</time> • 5 min read
+                <span class="section-kicker">Community Spotlight</span>
+                <h1 class="headline">Embracing Authenticity: Two Journeys, One Welcoming Community</h1>
+
+                <div class="byline-row">
+                    <div class="byline-meta">
+                        <span>By <span class="author-name">Shomokami</span></span>
+                        <span><time datetime="2023-06-15">June 15, 2023</time></span>
+                        <span>&middot; 7 min read</span>
+                    </div>
+                    <div class="share-tools">
+                        <button type="button">Share</button>
+                        <button type="button">Tweet</button>
+                        <button type="button">Email</button>
+                        <button type="button">Print</button>
+                    </div>
                 </div>
 
-                <figure>
-                    <div class="video-container">
-                        <iframe src="https://player.vimeo.com/video/1137653023?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
-                                frameborder="0" 
-                                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
-                                referrerpolicy="strict-origin-when-cross-origin" 
+                <p class="lead-graf drop-cap">In a world that often demands conformity, choosing to live authentically is one of the bravest acts of self-love. Today we celebrate two remarkable individuals — Nahian Haque and Fazle Rabbi — who have found the courage to embrace their true identities as gay men.</p>
+
+                <p class="body-graf">Our community grows stronger with each person who brings their whole self to the table. The journey of self-discovery is deeply personal and often challenging, but it is in sharing our authentic selves that we find true connection. Every new voice reminds us of the beautiful diversity within the LGBTQ community.</p>
+
+                <!-- Video: Nahian Haque -->
+                <div class="video-module">
+                    <div class="video-embed">
+                        <iframe src="https://player.vimeo.com/video/1137653023?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+                                referrerpolicy="strict-origin-when-cross-origin"
                                 title="Nahian Haque - Embracing Authenticity">
                         </iframe>
                     </div>
-                    <figcaption>
-                        <strong>Nahian Haque</strong> • Embracing his true identity with courage and grace
-                        <div class="consent-note">Consent: Video used with permission.</div>
-                    </figcaption>
-                </figure>
+                    <div class="video-credit">
+                        <span class="subject-name">Nahian Haque</span>
+                        Embracing his true identity with courage and grace.
+                        <div class="permission-note">Consent: Video used with permission. Nahian shares his personal story of self-acceptance.</div>
+                    </div>
+                </div>
 
-                <p class="lead">In a world that often demands conformity, choosing to live authentically is one of the bravest acts of self-love. Today, we celebrate another beautiful soul who has found the courage to embrace his true identity as a gay man.</p>
-
-                <p>Our community grows stronger with each person who brings their whole self to the table. The journey of self-discovery is deeply personal and often challenging, but it's in sharing our authentic selves that we find true connection and belonging. Every new voice enriches our collective experience and reminds us of the beautiful diversity within the LGBTQ community.</p>
-
-                <blockquote class="article-quote">
-                    "Seeing someone like yourself living authentically can be transformative. It sends a powerful message that you are not alone and that your identity is valid and celebrated."
+                <blockquote class="pull-quote">
+                    &ldquo;Seeing someone like yourself living authentically can be transformative. It sends a powerful message that you are not alone and that your identity is valid and celebrated.&rdquo;
                 </blockquote>
 
-                <p>To our friend Nahian who has joined us: your presence matters. Your story matters. The unique perspective you bring adds depth to our conversations and strength to our community. While everyone's path looks different, what unites us is the shared understanding of what it means to seek and honor our truth.</p>
+                <p class="body-graf">To our friend Nahian: your presence matters. Your story matters. The unique perspective you bring adds depth to our conversations and strength to our community. While everyone&rsquo;s path looks different, what unites us is the shared understanding of what it means to seek and honor our truth.</p>
 
-                <h2>A Community of Support</h2>
+                <h2 class="section-head">A Second Voice: Meet Fazle Rabbi</h2>
 
-                <p>We recognize that sharing one's identity is a profound act of trust. In return, we offer our unwavering support, our open hearts, and our commitment to creating spaces where you can flourish. Welcome to a community that sees you, celebrates you, and is better for having you.</p>
+                <p class="body-graf">Just as we celebrate Nahian&rsquo;s arrival, we are equally honoured to introduce Fazle Rabbi — another brave soul who has chosen to live openly and proudly. Fazle&rsquo;s journey is a testament to the resilience of the human spirit and the power of community support.</p>
 
-                <p>Local community centers have reported a 27% increase in participation from young adults exploring their identity in the past year. This growth reflects a broader cultural shift toward acceptance and understanding.</p>
+                <!-- Video: Fazle Rabbi -->
+                <div class="video-module">
+                    <div class="video-embed">
+                        <iframe src="https://player.vimeo.com/video/1188466931?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+                                referrerpolicy="strict-origin-when-cross-origin"
+                                title="Fazle Rabbi - Sharing His Authentic Self">
+                        </iframe>
+                    </div>
+                    <div class="video-credit">
+                        <span class="subject-name">Fazle Rabbi</span>
+                        Sharing his story of authenticity and courage.
+                        <div class="permission-note">Consent: Video shared with permission. Fazle speaks about finding freedom in living his truth.</div>
+                    </div>
+                </div>
 
-                <h2>The Importance of Visibility</h2>
+                <p class="body-graf">Fazle&rsquo;s openness reminds us that visibility matters. When individuals like him and Nahian step forward, they create pathways for others who may still be finding their way. Research consistently shows that positive representation improves mental health and fosters a sense of belonging.</p>
 
-                <p>Visibility matters now more than ever. When individuals like Nahian share their journeys, they create pathways for others to follow. Research shows that positive representation in media and community spaces significantly improves mental health outcomes for LGBTQ individuals.</p>
+                <p class="body-graf">&ldquo;Seeing someone like yourself living authentically can be transformative,&rdquo; says Dr. Elena Martinez, a psychologist specializing in LGBTQ mental health. &ldquo;It sends a powerful message that you are not alone.&rdquo;</p>
 
-                <p>"Seeing someone like yourself living authentically can be transformative," says Dr. Elena Martinez, a psychologist specializing in LGBTQ mental health. "It sends a powerful message that you are not alone and that your identity is valid and celebrated."</p>
+                <h2 class="section-head">A Community of Support</h2>
+                <p class="body-graf">We recognize that sharing one&rsquo;s identity is a profound act of trust. In return, we offer our unwavering support, open hearts, and a commitment to creating spaces where everyone can flourish. Welcome to a community that sees you, celebrates you, and is better for having you.</p>
+                <p class="body-graf">Local community centers have reported a 27% increase in participation from young adults exploring their identity in the past year — a reflection of a broader cultural shift toward acceptance.</p>
 
-                <h2>Looking Forward</h2>
-
-                <p>As we welcome Nahian to our community, we're reminded that the journey toward full acceptance continues. While progress has been made, there is still work to be done to ensure that every person can live openly and safely as their true self.</p>
-
-                <p>We stand with Nahian and all members of our LGBTQ community in celebrating authenticity, courage, and the beautiful diversity that makes our society stronger.</p>
-
-                <aside class="social-share">
-                    <button class="share-btn" id="twitterShare" aria-label="Share on Twitter">
-                        Twitter
-                    </button>
-                    <button class="share-btn" id="facebookShare" aria-label="Share on Facebook">
-                        Facebook
-                    </button>
-                    <button class="share-btn" id="emailShare" aria-label="Share via Email">
-                        Email
-                    </button>
-                    <button class="share-btn" id="printArticle" aria-label="Print this article">
-                        Print
-                    </button>
-                </aside>
+                <p class="body-graf"><em>We stand with Nahian, Fazle, and all members of our LGBTQ family in celebrating authenticity, courage, and the beautiful diversity that makes our society stronger.</em></p>
             </article>
-
-            <section class="related-articles">
-                <h2>Related Stories</h2>
-                <div class="related-article">
-                    <div class="kicker">Community</div>
-                    <h3>Local LGBTQ Center Expands Services</h3>
-                    <p>The downtown community center announces new mental health resources and support groups for 2023.</p>
-                    <div class="trending-meta">June 12, 2023</div>
-                </div>
-                <div class="related-article">
-                    <div class="kicker">Culture</div>
-                    <h3>How Media Representation Is Changing Lives</h3>
-                    <p>A look at the impact of diverse storytelling on young people exploring their identities.</p>
-                    <div class="trending-meta">June 8, 2023</div>
-                </div>
-                <div class="related-article">
-                    <div class="kicker">Opinion</div>
-                    <h3>Why Coming Out Stories Still Matter</h3>
-                    <p>In an increasingly accepting world, personal narratives continue to build bridges of understanding.</p>
-                    <div class="trending-meta">June 5, 2023</div>
-                </div>
-            </section>
         </main>
 
-        <aside class="sidebar">
-            <h2>Trending Stories</h2>
-            <ul class="trending-list">
-                <li>
-                    <a href="#">City Council Approves New Community Safety Initiative</a>
-                    <div class="trending-meta">Politics • 2h ago</div>
-                </li>
-                <li>
-                    <a href="#">Tech Giant Announces Major Local Expansion</a>
-                    <div class="trending-meta">Business • 4h ago</div>
-                </li>
-                <li>
-                    <a href="#">New Study Reveals Benefits of Urban Green Spaces</a>
-                    <div class="trending-meta">Science • 6h ago</div>
-                </li>
-                <li>
-                    <a href="#">Local Artists Transform Downtown With New Mural Project</a>
-                    <div class="trending-meta">Arts • Yesterday</div>
-                </li>
-                <li>
-                    <a href="#">Restaurant Week Returns With Record Participation</a>
-                    <div class="trending-meta">Culture • Yesterday</div>
-                </li>
-            </ul>
-
+        <!-- Sidebar -->
+        <aside class="sidebar-col">
+            <div class="sidebar-box">
+                <h3>Trending Now</h3>
+                <ul class="trending-items">
+                    <li><a href="#">City Council Approves New Community Safety Initiative</a><span class="trending-label">Politics &middot; 2h ago</span></li>
+                    <li><a href="#">Tech Giant Announces Major Local Expansion Plans</a><span class="trending-label">Business &middot; 4h ago</span></li>
+                    <li><a href="#">New Study Reveals Benefits of Urban Green Spaces</a><span class="trending-label">Science &middot; 6h ago</span></li>
+                    <li><a href="#">Local Artists Transform Downtown With New Mural Project</a><span class="trending-label">Arts &middot; Yesterday</span></li>
+                    <li><a href="#">Restaurant Week Returns With Record Participation</a><span class="trending-label">Culture &middot; Yesterday</span></li>
+                </ul>
+            </div>
             <div class="newsletter-signup">
                 <h3>Stay Informed</h3>
-                <p>Sign up for our daily newsletter to get the latest news delivered to your inbox.</p>
-                <form class="newsletter-form">
-                    <input type="email" placeholder="Your email address" aria-label="Email address">
-                    <button type="submit">Subscribe</button>
-                </form>
+                <p>Get the latest LGBTQ+ news and community stories delivered to your inbox.</p>
+                <input type="email" placeholder="Your email address" aria-label="Email address">
+                <button type="submit">Subscribe</button>
+            </div>
+            <div class="sidebar-box">
+                <h3>Opinion</h3>
+                <p class="opinion-snippet">&ldquo;Why coming out stories still matter — personal narratives build bridges of understanding that legislation alone cannot create.&rdquo;
+                    <span class="attribution">&mdash; The Editorial Board</span>
+                </p>
             </div>
         </aside>
     </div>
 
-    <footer class="site-footer">
-        <div class="footer-container">
-            <div class="footer-section">
-                <h3>Sections</h3>
-                <ul class="footer-links">
+    <!-- Related Stories -->
+    <section class="related-stories">
+        <h2>More Community Stories</h2>
+        <div class="related-grid">
+            <div class="related-card">
+                <span class="tag-kicker">Local</span>
+                <h4>LGBTQ Center Expands Mental Health Services</h4>
+                <p>New resources aim to support young adults exploring their identities in a safe environment.</p>
+            </div>
+            <div class="related-card">
+                <span class="tag-kicker">Culture</span>
+                <h4>How Media Representation Is Changing Lives</h4>
+                <p>Diverse storytelling gives hope to those seeking role models they can identify with.</p>
+            </div>
+            <div class="related-card">
+                <span class="tag-kicker">Voices</span>
+                <h4>Why Visibility Matters More Than Ever</h4>
+                <p>Activists and community leaders discuss the importance of being seen in today&rsquo;s climate.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="page-footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Sections</h4>
+                <ul>
                     <li><a href="#">Home</a></li>
                     <li><a href="#">Politics</a></li>
+                    <li><a href="#">World</a></li>
                     <li><a href="#">Business</a></li>
                     <li><a href="#">Technology</a></li>
-                    <li><a href="#">Culture</a></li>
                 </ul>
             </div>
-            <div class="footer-section">
-                <h3>Company</h3>
-                <ul class="footer-links">
-                    <li><a href="#">About Us</a></li>
+            <div class="footer-col">
+                <h4>About</h4>
+                <ul>
+                    <li><a href="#">Our Mission</a></li>
+                    <li><a href="#">Ethics Policy</a></li>
+                    <li><a href="#">Diversity &amp; Inclusion</a></li>
                     <li><a href="#">Careers</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#">Ethics</a></li>
-                    <li><a href="#">Standards</a></li>
                 </ul>
             </div>
-            <div class="footer-section">
-                <h3>Support</h3>
-                <ul class="footer-links">
-                    <li><a href="#">Help Center</a></li>
-                    <li><a href="#">Subscriptions</a></li>
+            <div class="footer-col">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">FAQ</a></li>
                     <li><a href="#">Accessibility</a></li>
-                    <li><a href="#">Feedback</a></li>
-                    <li><a href="#">Site Map</a></li>
+                    <li><a href="#">Advertise</a></li>
                 </ul>
             </div>
-            <div class="footer-section">
-                <h3>Follow Us</h3>
-                <ul class="footer-links">
+            <div class="footer-col">
+                <h4>Follow Us</h4>
+                <ul>
                     <li><a href="#">Twitter</a></li>
                     <li><a href="#">Facebook</a></li>
                     <li><a href="#">Instagram</a></li>
-                    <li><a href="#">LinkedIn</a></li>
-                    <li><a href="#">Newsletter</a></li>
+                    <li><a href="#">YouTube</a></li>
                 </ul>
             </div>
-            <div class="copyright">
-                <p>&copy; 2023 Global News Network. All rights reserved.</p>
-            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2023 Global News Network. All rights reserved. &middot; Privacy Policy &middot; Terms of Service
         </div>
     </footer>
 
     <script>
-        // Mobile menu functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-            const navLinks = document.getElementById('navLinks');
-            
-            mobileMenuBtn.addEventListener('click', function() {
-                navLinks.classList.toggle('active');
-            });
-            
-            // Close mobile menu when clicking outside
-            document.addEventListener('click', function(event) {
-                if (!event.target.closest('.main-nav') && !event.target.closest('.mobile-menu-btn')) {
-                    navLinks.classList.remove('active');
-                }
-            });
-            
-            // Social sharing functionality
-            const twitterShare = document.getElementById('twitterShare');
-            const facebookShare = document.getElementById('facebookShare');
-            const emailShare = document.getElementById('emailShare');
-            const printArticle = document.getElementById('printArticle');
-            
-            const pageUrl = encodeURIComponent(window.location.href);
-            const pageTitle = encodeURIComponent(document.title);
-            
-            twitterShare.addEventListener('click', function() {
-                const twitterUrl = `https://twitter.com/intent/tweet?url=${pageUrl}&text=${pageTitle}`;
-                window.open(twitterUrl, '_blank', 'width=600,height=400');
-            });
-            
-            facebookShare.addEventListener('click', function() {
-                const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${pageUrl}`;
-                window.open(facebookUrl, '_blank', 'width=600,height=400');
-            });
-            
-            emailShare.addEventListener('click', function() {
-                const emailSubject = encodeURIComponent(document.title);
-                const emailBody = encodeURIComponent(`I thought you might be interested in this article: ${window.location.href}`);
-                window.location.href = `mailto:?subject=${emailSubject}&body=${emailBody}`;
-            });
-            
-            printArticle.addEventListener('click', function() {
-                window.print();
-            });
-            
-            // Hide loading bar after page load
-            window.addEventListener('load', function() {
-                setTimeout(function() {
-                    document.querySelector('.loading-bar').style.display = 'none';
-                }, 500);
-            });
-            
-            // Add live indicator animation
-            const liveIndicator = document.querySelector('.live-indicator');
-            if (liveIndicator) {
-                setInterval(function() {
-                    liveIndicator.style.animation = 'none';
-                    setTimeout(function() {
-                        liveIndicator.style.animation = 'pulse 2s infinite';
-                    }, 10);
-                }, 4000);
+        (function() {
+            // Live dateline
+            function updateDateline() {
+                const now = new Date();
+                const opts = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                const el = document.getElementById('datelineDisplay');
+                if (el) el.textContent = now.toLocaleDateString('en-US', opts);
             }
-            
-            // Video interaction tracking
-            const videoIframe = document.querySelector('.video-container iframe');
-            if (videoIframe) {
-                // Note: Due to cross-origin restrictions, we can't directly control Vimeo iframe
-                // In a real implementation, you would use the Vimeo Player API
-                console.log('Video embedded successfully');
+            updateDateline();
+
+            // Share button placeholders
+            document.querySelectorAll('.share-tools button').forEach(function(btn) {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    alert('Sharing feature would open here. (Demonstration)');
+                });
+            });
+
+            // Newsletter subscription placeholder
+            const newsletterBtn = document.querySelector('.newsletter-signup button');
+            if (newsletterBtn) {
+                newsletterBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const input = document.querySelector('.newsletter-signup input');
+                    if (input && input.value.trim() !== '') {
+                        alert('Thank you for subscribing. (Demonstration)');
+                        input.value = '';
+                    } else {
+                        alert('Please enter your email address.');
+                    }
+                });
             }
-        });
+
+            // Sticky nav shadow enhancement
+            const navBar = document.getElementById('navBar');
+            if (navBar) {
+                window.addEventListener('scroll', function() {
+                    if (window.scrollY > 40) {
+                        navBar.style.boxShadow = '0 2px 8px rgba(0,0,0,0.1)';
+                    } else {
+                        navBar.style.boxShadow = '0 1px 3px rgba(0,0,0,0.05)';
+                    }
+                });
+            }
+        })();
     </script>
 </body>
 </html>
