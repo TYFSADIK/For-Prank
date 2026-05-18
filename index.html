@@ -3,207 +3,666 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Global Roast Network | Five Clowns, One Tiny Nunu Community</title>
-    <meta name="description" content="Exposing the truth: Nahian Haque, Fazle Rabbi and three other brave homosexuals living their best rainbow delusion.">
-    <meta property="og:title" content="Five Gays, One Massive Copium Community | Global Roast Network">
-    <meta property="og:description" content="Intense roasting of Nahian Haque, Fazle Rabbi and their fellow choto nunu warriors.">
+    <title>The Roast Times | Five Kings Face the Ultimate Roast</title>
+    <meta name="description" content="Nahian, Fazle and three mystery icons step into the roasting pit. No one is safe. Everyone gets scorched with style.">
+    <meta property="og:title" content="The Roast Times: Five Kings Get Grilled">
+    <meta property="og:description" content="A full-scale, unsparing roast of five legendary figures from the Choto Nunu community.">
     <meta property="og:image" content="https://i.ibb.co/SXhYSKzV/Nahian-bhai-khuni.png">
     <meta property="og:url" content="https://shomokami.com/roast">
     <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The Roast Times: Five Kings Get Grilled">
+    <meta name="twitter:description" content="Nahian, Fazle, and three mystery icons step into the roasting pit. Everyone gets scorched with style.">
+    <meta name="twitter:image" content="https://i.ibb.co/SXhYSKzV/Nahian-bhai-khuni.png">
     <style>
+        /* ---- NEW YORK TIMES INSPIRED STYLES ---- */
         :root {
-            --ink: #1a1a1a;
-            --accent: #8B0000;
-            --accent-deep: #5c0000;
-            --bg: #0f0f0f;
-            --bg-warm: #1a1a1a;
-            --border: #333;
+            --ny-bg: #ffffff;
+            --ny-text: #121212;
+            --ny-muted: #333333;
+            --ny-border: #e2e2e2;
+            --ny-accent: #326891; /* classic NYT link blue */
+            --ny-accent-hover: #2a5a7a;
+            --ny-red: #b30000;
+            --font-heading: 'Georgia', 'Times New Roman', serif;
+            --font-body: 'Georgia', 'Times New Roman', serif;
+            --font-sans: 'Helvetica Neue', 'Arial', sans-serif;
         }
-        * { margin:0; padding:0; box-sizing:border-box; }
-        html { font-size: 18px; background:#0a0a0a; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { font-size: 18px; background: var(--ny-bg); }
         body {
-            font-family: Georgia, serif;
-            color: #ddd;
-            background: var(--bg-warm);
-            line-height: 1.6;
+            font-family: var(--font-body);
+            color: var(--ny-text);
+            background: var(--ny-bg);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
         }
-        .top-ribbon {
-            background: #000;
-            color: #ff4444;
-            padding: 0.4rem 0;
-            font-weight: bold;
-            text-align: center;
-            letter-spacing: 1px;
+        a { color: var(--ny-accent); text-decoration: none; }
+        a:hover { color: var(--ny-accent-hover); text-decoration: underline; }
+
+        /* Top edition bar */
+        .edition-bar {
+            background: #f7f7f7;
+            border-bottom: 1px solid var(--ny-border);
+            font-family: var(--font-sans);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+            padding: 0.5rem 1.2rem;
+            display: flex;
+            justify-content: space-between;
+            color: #555;
         }
+        .edition-bar .left { display: flex; gap: 1.5rem; align-items: center; }
+        .edition-bar .right { display: flex; gap: 1.2rem; align-items: center; }
+        .subscribe-btn {
+            background: var(--ny-red);
+            color: #fff;
+            border: none;
+            padding: 0.3rem 0.8rem;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .subscribe-btn:hover { background: #8f0000; }
+        .edition-bar a { color: #555; text-decoration: none; }
+        .edition-bar a:hover { text-decoration: underline; }
+
+        /* Main masthead */
         .masthead {
-            background: #111;
-            padding: 1.5rem 0;
-            border-bottom: 4px solid #8B0000;
+            text-align: center;
+            padding: 1.2rem 0 0.8rem;
+            border-bottom: 2px solid #000;
+            margin-bottom: 0;
+            font-family: 'Times New Roman', 'Georgia', serif;
         }
         .newspaper-name {
-            font-size: 3rem;
-            color: #fff;
-            text-align: center;
-            font-weight: 900;
+            font-size: 3.2rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            line-height: 1;
+            color: #000;
+            text-transform: none;
         }
-        .newspaper-name .roast { color: #ff2222; }
-        .headline {
+        .newspaper-name .decor {
             font-size: 2.8rem;
-            line-height: 1.1;
-            color: #ff4444;
-            text-align: center;
-            margin: 1.5rem 0;
+            vertical-align: middle;
         }
-        .article-card {
-            max-width: 1100px;
-            margin: 2rem auto;
-            background: #111;
-            padding: 3rem;
-            border: 2px solid #8B0000;
-        }
-        .section-kicker {
-            color: #ffaa00;
-            font-size: 1.1rem;
-            letter-spacing: 3px;
+        .tagline {
+            font-family: var(--font-sans);
+            font-size: 0.7rem;
             text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #555;
+            margin-top: 0.2rem;
         }
-        .body-graf {
-            font-size: 1.15rem;
+
+        /* Navigation */
+        .nav-bar {
+            border-bottom: 1px solid #000;
+            position: sticky;
+            top: 0;
+            background: #fff;
+            z-index: 100;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+        }
+        .nav-inner {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 48px;
+        }
+        .nav-links {
+            display: flex;
+            list-style: none;
+            font-family: var(--font-sans);
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            gap: 1.8rem;
+        }
+        .nav-links a {
+            color: #333;
+            padding: 0.6rem 0;
+            border-bottom: 2px solid transparent;
+            transition: all 0.15s;
+        }
+        .nav-links a:hover,
+        .nav-links a.active {
+            border-bottom-color: #000;
+            text-decoration: none;
+        }
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Breaking news strip (subtle) */
+        .breaking-strip {
+            background: #fef9f5;
+            border-bottom: 1px solid #e2dcd5;
+            padding: 0.5rem 1.5rem;
+            font-family: var(--font-sans);
+            font-size: 0.8rem;
+            color: #b30000;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        .breaking-label {
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: #b30000;
+        }
+        .ticker {
+            overflow: hidden;
+            flex: 1;
+            white-space: nowrap;
+        }
+        .ticker span {
+            display: inline-block;
+            animation: scroll 30s linear infinite;
+        }
+        @keyframes scroll {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* Main layout */
+        .main-grid {
+            max-width: 1300px;
+            margin: 2.5rem auto;
+            padding: 0 1.5rem;
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 3rem;
+        }
+
+        /* Article */
+        .article-main {
+            background: #fff;
+            border: 1px solid var(--ny-border);
+            border-radius: 2px;
+            padding: 2.5rem;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.02);
+        }
+        .article-kicker {
+            font-family: var(--font-sans);
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--ny-red);
+            margin-bottom: 0.5rem;
+        }
+        .headline {
+            font-family: 'Times New Roman', Georgia, serif;
+            font-size: 2.7rem;
+            font-weight: 700;
+            line-height: 1.15;
+            color: #000;
+            margin-bottom: 1.2rem;
+        }
+        .byline {
+            font-family: var(--font-sans);
+            font-size: 0.85rem;
+            color: #555;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding-bottom: 1.2rem;
             margin-bottom: 1.8rem;
-            color: #ccc;
+            border-bottom: 1px solid #ccc;
         }
-        .pull-quote {
-            border-left: 6px solid #ff2222;
-            padding: 1.5rem;
-            margin: 2rem 0;
-            font-size: 1.4rem;
-            color: #ff8888;
-            background: #1f1f1f;
-        }
-        .video-module {
-            background: #000;
-            padding: 10px;
-            border: 3px solid #8B0000;
-            margin: 2.5rem 0;
-        }
-        .video-credit {
-            color: #ff4444;
-            padding: 12px;
-            font-weight: bold;
-        }
-        .roast-level {
-            background: #330000;
-            color: #ffdd77;
-            padding: 1rem;
-            margin: 1.5rem 0;
+        .byline .author { color: #000; font-weight: 700; }
+        .lead {
+            font-size: 1.2rem;
+            line-height: 1.65;
+            color: #222;
+            margin-bottom: 1.8rem;
             font-style: italic;
-            border: 1px dashed #ff4444;
+            border-left: 3px solid #ccc;
+            padding-left: 1.2rem;
+        }
+        .article-body p {
+            margin-bottom: 1.6rem;
+            font-size: 1.05rem;
+            color: #1a1a1a;
+        }
+        .article-body strong { color: #000; font-weight: 700; }
+
+        /* Video card */
+        .video-card {
+            border: 1px solid #ddd;
+            margin: 2.5rem 0;
+            background: #fafafa;
+        }
+        .video-embed {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            background: #000;
+        }
+        .video-embed iframe {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            border: none;
+        }
+        .video-caption {
+            padding: 1rem 1.5rem;
+            font-family: var(--font-sans);
+            font-size: 0.85rem;
+            color: #333;
+            background: #f9f9f9;
+            border-top: 1px solid #ddd;
+        }
+        .video-caption .name {
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: #000;
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+        .roast-quote {
+            font-style: italic;
+            color: #555;
+            border-left: 2px solid #ccc;
+            padding-left: 0.8rem;
+            margin-top: 0.6rem;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 1.8rem;
+        }
+        .sidebar-box {
+            border: 1px solid var(--ny-border);
+            padding: 1.5rem;
+            background: #fff;
+        }
+        .sidebar-box h3 {
+            font-family: 'Times New Roman', Georgia, serif;
+            font-size: 1.2rem;
+            color: #000;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #000;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .story-list { list-style: none; }
+        .story-list li {
+            margin-bottom: 0.9rem;
+            padding-bottom: 0.7rem;
+            border-bottom: 1px solid #eee;
+            font-size: 0.9rem;
+        }
+        .story-list li:last-child { border-bottom: none; margin-bottom: 0; }
+        .story-list a { color: #000; font-weight: 500; }
+        .story-list a:hover { color: var(--ny-accent); text-decoration: underline; }
+        .story-list .time { font-size: 0.7rem; color: #777; display: block; margin-top: 0.2rem; }
+
+        .poll-option {
+            display: block;
+            background: #f7f7f7;
+            padding: 0.6rem;
+            border: 1px solid #ddd;
+            margin-bottom: 0.5rem;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: background 0.15s;
+        }
+        .poll-option:hover { background: #e8e8e8; }
+
+        .newsletter-signup {
+            background: #fafafa;
+            border: 1px solid #ddd;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        .newsletter-signup h3 { margin-bottom: 0.5rem; font-size: 1.2rem; }
+        .newsletter-signup input {
+            width: 100%;
+            padding: 0.6rem;
+            border: 1px solid #ccc;
+            font-family: var(--font-sans);
+            margin-bottom: 0.7rem;
+            font-size: 0.9rem;
+        }
+        .newsletter-signup button {
+            width: 100%;
+            padding: 0.6rem;
+            background: #000;
+            color: #fff;
+            border: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            cursor: pointer;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            transition: background 0.2s;
+        }
+        .newsletter-signup button:hover { background: #333; }
+
+        /* Footer */
+        .page-footer {
+            background: #f7f7f7;
+            margin-top: 3rem;
+            padding: 2.5rem 1.5rem 1.5rem;
+            border-top: 2px solid #000;
+            font-family: var(--font-sans);
+            font-size: 0.85rem;
+            color: #444;
+        }
+        .footer-grid {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+        .footer-col h4 {
+            font-family: 'Times New Roman', serif;
+            font-size: 1.1rem;
+            color: #000;
+            margin-bottom: 0.8rem;
+            font-weight: 700;
+        }
+        .footer-col ul { list-style: none; }
+        .footer-col li { margin-bottom: 0.5rem; }
+        .footer-col a { color: #444; text-decoration: none; }
+        .footer-col a:hover { text-decoration: underline; }
+        .footer-bottom {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #ddd;
+            font-size: 0.75rem;
+            color: #777;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .main-grid { grid-template-columns: 1fr 300px; }
+        }
+        @media (max-width: 768px) {
+            .main-grid { grid-template-columns: 1fr; }
+            .headline { font-size: 2rem; }
+            .article-main { padding: 1.5rem; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            .nav-links { display: none; }
+            .mobile-menu-btn { display: block; }
+            .nav-inner { justify-content: space-between; }
+        }
+        @media (max-width: 480px) {
+            .footer-grid { grid-template-columns: 1fr; }
+            .headline { font-size: 1.8rem; }
+            .edition-bar { flex-direction: column; gap: 0.3rem; }
         }
     </style>
 </head>
 <body>
-    <div class="top-ribbon">
-        LIVE ROAST • PRIDE MONTH SPECIAL • THESE DUDES REALLY THOUGHT THIS WAS A GOOD IDEA
+    <!-- Edition bar -->
+    <div class="edition-bar">
+        <div class="left">
+            <span>Tuesday, June 15, 2026</span>
+            <span>Today’s Paper</span>
+        </div>
+        <div class="right">
+            <a href="#">S&P 500 +0.8%</a>
+            <button class="subscribe-btn">Subscribe for $1/week</button>
+            <a href="#">Log In</a>
+        </div>
     </div>
 
-    <header class="masthead">
-        <div class="newspaper-name">GLOBAL <span class="roast">ROAST</span>.NETWORK</div>
-        <p style="text-align:center;color:#888;font-size:0.9rem;margin-top:8px;">Truth • No Mercy • Maximum Choto Nunu Energy</p>
-    </header>
-
-    <div class="article-card">
-        <span class="section-kicker">EMERGENCY ROAST DROP</span>
-        <h1 class="headline">FIVE GAY MEN, ONE TINY NUNU COMMUNITY: A TRAGEDY IN FIVE ACTS</h1>
-        
-        <p class="body-graf" style="text-align:center;font-size:1.3rem;color:#ff6666;">
-            In a world full of actual problems, these five kings decided the most important thing was announcing to the internet that they like dick. Congratulations, legends.
-        </p>
-
-        <!-- Nahian Haque Roast -->
-        <div class="video-module">
-            <div style="position:relative;padding-bottom:56.25%;background:#000;">
-                <iframe src="https://player.vimeo.com/video/1137653023" 
-                        style="position:absolute;top:0;left:0;width:100%;height:100%;" 
-                        allow="autoplay; fullscreen" allowfullscreen></iframe>
-            </div>
-            <div class="video-credit">
-                NAHIAN HAQUE — "Choto Nunu Champion 2026"<br>
-                <span style="color:#ff8888;">Bro really made a coming out video like the world was waiting.</span>
-            </div>
-        </div>
-
-        <div class="roast-level">
-            "I was born this way" — every gay guy who watched too much Netflix. Nahian bhai, we believe you. No straight man would put this much effort into looking this emotional on camera.
-        </div>
-
-        <p class="body-graf">Next up we have the legendary Fazle Rabbi, another warrior in the great battle against heterosexuality.</p>
-
-        <!-- Fazle Rabbi -->
-        <div class="video-module">
-            <div style="position:relative;padding-bottom:56.25%;background:#000;">
-                <iframe src="https://player.vimeo.com/video/1188466931" 
-                        style="position:absolute;top:0;left:0;width:100%;height:100%;" 
-                        allow="autoplay; fullscreen" allowfullscreen></iframe>
-            </div>
-            <div class="video-credit">
-                FAZLE RABBI — Professional Bottom Energy<br>
-                <span style="color:#ff8888;">This man looked at his life and said "yeah, more rainbow flags please."</span>
-            </div>
-        </div>
-
-        <blockquote class="pull-quote">
-            "I finally feel free" — said the man who will never experience what it's like to naturally attract women.
-        </blockquote>
-
-        <h2 style="color:#ff4444;margin:2rem 0 1rem;">The Other Three Clowns</h2>
-        
-        <div class="video-module">
-            <div style="position:relative;padding-bottom:56.25%;background:#000;">
-                <iframe src="https://player.vimeo.com/video/1193080308" 
-                        style="position:absolute;top:0;left:0;width:100%;height:100%;" 
-                        allow="autoplay; fullscreen" allowfullscreen></iframe>
-            </div>
-            <div class="video-credit">RANDOM GAY #3 — "I'm so brave for this"</div>
-        </div>
-
-        <div class="video-module">
-            <div style="position:relative;padding-bottom:56.25%;background:#000;">
-                <iframe src="https://player.vimeo.com/video/1193080307" 
-                        style="position:absolute;top:0;left:0;width:100%;height:100%;" 
-                        allow="autoplay; fullscreen" allowfullscreen></iframe>
-            </div>
-            <div class="video-credit">RANDOM GAY #4 — Peak Delusion Hours</div>
-        </div>
-
-        <div class="video-module">
-            <div style="position:relative;padding-bottom:56.25%;background:#000;">
-                <iframe src="https://player.vimeo.com/video/1193080309" 
-                        style="position:absolute;top:0;left:0;width:100%;height:100%;" 
-                        allow="autoplay; fullscreen" allowfullscreen></iframe>
-            </div>
-            <div class="video-credit">RANDOM GAY #5 — Final Boss of Copium</div>
-        </div>
-
-        <div class="roast-level" style="text-align:center;font-size:1.4rem;">
-            These five grown men really sat down, turned on the camera, and decided the world needed to know they enjoy taking it up the ass. 
-            <br><br>
-            <strong>THEY ARE ALL GAY.</strong><br>
-            And not just regular gay — they made Vimeo montages about it.
-        </div>
-
-        <p class="body-graf" style="text-align:center;font-size:1.5rem;color:#ffaa00;">
-            The Choto Nunu Community welcomes its newest members with open arms (and probably open legs). 
-            May your flags wave forever and your holes stay relaxed.
-        </p>
-
-        <p style="text-align:center;margin-top:3rem;color:#555;font-size:0.9rem;">
-            This has been a Global Roast Network production.<br>
-            No one was hurt in the making of this article except their egos.
-        </p>
+    <!-- Masthead -->
+    <div class="masthead">
+        <div class="newspaper-name">The Roast Times</div>
+        <div class="tagline">All the News That's Fit to Roast</div>
     </div>
+
+    <!-- Navigation -->
+    <nav class="nav-bar" id="navBar">
+        <div class="nav-inner">
+            <ul class="nav-links">
+                <li><a href="#" class="active">U.S.</a></li>
+                <li><a href="#">World</a></li>
+                <li><a href="#">Business</a></li>
+                <li><a href="#">Arts</a></li>
+                <li><a href="#">Lifestyle</a></li>
+                <li><a href="#">Opinion</a></li>
+                <li><a href="#">Audio</a></li>
+                <li><a href="#">Games</a></li>
+                <li><a href="#">Cooking</a></li>
+                <li><a href="#">Wirecutter</a></li>
+            </ul>
+            <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+        </div>
+    </nav>
+
+    <!-- Breaking news -->
+    <div class="breaking-strip">
+        <span class="breaking-label">Live</span>
+        <div class="ticker">
+            <span>Five community icons enter the ultimate roast — full coverage and analysis inside. Nahian, Fazle, and three mystery guests face the heat. Zero mercy, respectful burns only.</span>
+        </div>
+    </div>
+
+    <!-- Main content -->
+    <div class="main-grid">
+        <main class="article-main">
+            <span class="article-kicker">The Roast</span>
+            <h1 class="headline">Five Kings. One Stage. Zero Mercy.</h1>
+            <div class="byline">
+                <span>By <span class="author">The Roastmaster General</span></span>
+                <span>June 15, 2026</span>
+            </div>
+            <p class="lead">
+                Prepare yourselves. The gloves aren't just off; they've been incinerated. We are unleashing the inferno upon five of the most legendary figures in the Choto Nunu universe. This is not friendly shade — this is a full-scale, glorious, ego-scorching roast.
+            </p>
+
+            <div class="article-body">
+                <!-- Roast 1: Nahian -->
+                <div class="video-card">
+                    <div class="video-embed">
+                        <iframe src="https://player.vimeo.com/video/1137653023?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Nahian Haque"></iframe>
+                    </div>
+                    <div class="video-caption">
+                        <span class="name">Nahian Haque</span>
+                        He claims he is "embracing his true identity." Our assessment: His identity is a walking, talking advertisement for confidence that still remembers to call his mother.
+                        <div class="roast-quote">Nahian, your authenticity is so blinding it requires its own SPF 50+. We respect the glow, even if it is setting our retinas on fire.</div>
+                    </div>
+                </div>
+
+                <!-- Roast 2: Fazle -->
+                <div class="video-card">
+                    <div class="video-embed">
+                        <iframe src="https://player.vimeo.com/video/1188466931?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Fazle Rabbi"></iframe>
+                    </div>
+                    <div class="video-caption">
+                        <span class="name">Fazle Rabbi</span>
+                        Fazle's journey to self-acceptance was so powerful, it caused our Wi‑Fi to buffer in awe. This man possesses more poise than a royal wedding, and he is ready for the flame.
+                        <div class="roast-quote">Fazle, your courage is legendary. Fear itself once asked you for life advice. The only thing louder than that bravery is the collective gasp when you post a photograph.</div>
+                    </div>
+                </div>
+
+                <!-- Roast 3 -->
+                <div class="video-card">
+                    <div class="video-embed">
+                        <iframe src="https://player.vimeo.com/video/1193080308?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Mystery Roastee #3"></iframe>
+                    </div>
+                    <div class="video-caption">
+                        <span class="name">The Chiseled Monster</span>
+                        We do not have a name, but we have cheekbones that could cut glass. This gentleman stepped up to inspire, and frankly, we are inspired — mostly by how he looks while discussing vulnerability.
+                        <div class="roast-quote">Sir, your jawline is so sharp it registered as a weapon in three states. Authenticity suits you, but a warning label would be more appropriate: "May cause spontaneous, aggressive swooning."</div>
+                    </div>
+                </div>
+
+                <!-- Roast 4 -->
+                <div class="video-card">
+                    <div class="video-embed">
+                        <iframe src="https://player.vimeo.com/video/1193080307?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Inspiring Gentleman #4"></iframe>
+                    </div>
+                    <div class="video-caption">
+                        <span class="name">The Vibe Enigma</span>
+                        Another mystery man who arrived with nothing but a smile and an undeniable aura. He proves you do not need an introduction when your presence enters five minutes early.
+                        <div class="roast-quote">You preach "finding freedom" while looking as if you just purchased an entire island. We are not jealous — we are aggressively, passionately admiring from a safe distance.</div>
+                    </div>
+                </div>
+
+                <!-- Roast 5 -->
+                <div class="video-card">
+                    <div class="video-embed">
+                        <iframe src="https://player.vimeo.com/video/1193080309?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Fearless Spirit #5"></iframe>
+                    </div>
+                    <div class="video-caption">
+                        <span class="name">The Unstoppable Force</span>
+                        Closing the evening with a man so confident he probably high-fives his own reflection. His message: Live your truth. Our message: Please share the skincare routine.
+                        <div class="roast-quote">You are so fearless that even your critics have to admire you. We would roast you harder, but frankly, we are too distracted by that main‑character energy. Save some spotlight for the rest of us.</div>
+                    </div>
+                </div>
+
+                <p style="text-align:center; font-size:1.1rem; border-top:1px solid #ccc; border-bottom:1px solid #ccc; padding:1.5rem 0; margin:2rem 0;">
+                    <strong>Final note:</strong> We roast because we respect. Nahian, Fazle, and the three mystery kings — you have made the Choto Nunu community brighter, bolder, and infinitely more roastable. Thank you for being absolute fire.
+                </p>
+            </div>
+        </main>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-box">
+                <h3>Editors’ Picks</h3>
+                <ul class="story-list">
+                    <li><a href="#">Nahian – The Glowfather</a><span class="time">10m ago</span></li>
+                    <li><a href="#">Fazle – Captain Charisma</a><span class="time">1h ago</span></li>
+                    <li><a href="#">Mystery Jawline (The Monster)</a><span class="time">1h ago</span></li>
+                    <li><a href="#">The Vibe King (Enigma)</a><span class="time">2h ago</span></li>
+                    <li><a href="#">Main Character Energy (Force)</a><span class="time">3h ago</span></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-box">
+                <h3>Reader Poll</h3>
+                <p style="font-weight:600; margin-bottom:0.7rem;">Who handled the roast with the most grace?</p>
+                <div class="poll-option">Nahian – The Glowfather</div>
+                <div class="poll-option">Fazle – Captain Charisma</div>
+                <div class="poll-option">Mystery Jawline</div>
+                <div class="poll-option">The Vibe Enigma</div>
+                <div class="poll-option">Unstoppable Force</div>
+            </div>
+
+            <div class="newsletter-signup">
+                <h3>Get the Roast Newsletter</h3>
+                <p style="font-size:0.85rem; margin-bottom:1rem;">Be the first to know when someone brave steps into the pit.</p>
+                <input type="email" placeholder="Enter your email address">
+                <button>Sign Up</button>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Footer -->
+    <footer class="page-footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>NEWS</h4>
+                <ul>
+                    <li><a href="#">Home Page</a></li>
+                    <li><a href="#">World</a></li>
+                    <li><a href="#">Coronavirus</a></li>
+                    <li><a href="#">U.S. News</a></li>
+                    <li><a href="#">New York</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>OPINION</h4>
+                <ul>
+                    <li><a href="#">Today's Opinion</a></li>
+                    <li><a href="#">Columnists</a></li>
+                    <li><a href="#">Editorials</a></li>
+                    <li><a href="#">Guest Essays</a></li>
+                    <li><a href="#">Letters</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>ARTS</h4>
+                <ul>
+                    <li><a href="#">Books</a></li>
+                    <li><a href="#">Best Sellers</a></li>
+                    <li><a href="#">Dance</a></li>
+                    <li><a href="#">Movies</a></li>
+                    <li><a href="#">Music</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>LIVING</h4>
+                <ul>
+                    <li><a href="#">Cooking</a></li>
+                    <li><a href="#">Crossword</a></li>
+                    <li><a href="#">Travel</a></li>
+                    <li><a href="#">Well</a></li>
+                    <li><a href="#">Style</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2026 The Roast Times Company. All roasts performed by certified professionals with love and respect.
+        </div>
+    </footer>
 
     <script>
-        alert("Welcome to the roast. They are all gay.");
+        // Mobile menu toggle
+        const mobileBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        if (mobileBtn && navLinks) {
+            mobileBtn.addEventListener('click', () => {
+                if (navLinks.style.display === 'flex') {
+                    navLinks.style.display = 'none';
+                } else {
+                    navLinks.style.display = 'flex';
+                    navLinks.style.flexDirection = 'column';
+                    navLinks.style.position = 'absolute';
+                    navLinks.style.top = '48px';
+                    navLinks.style.left = '0';
+                    navLinks.style.width = '100%';
+                    navLinks.style.background = '#fff';
+                    navLinks.style.padding = '1rem 1.5rem';
+                    navLinks.style.borderBottom = '2px solid #000';
+                    navLinks.style.boxShadow = '0 4px 10px rgba(0,0,0,0.08)';
+                    navLinks.style.zIndex = '99';
+                }
+            });
+        }
+
+        // Newsletter dummy
+        document.querySelector('.newsletter-signup button')?.addEventListener('click', (e) => {
+            e.preventDefault();
+            const email = document.querySelector('.newsletter-signup input');
+            if (email && email.value.trim()) {
+                alert(`Thank you. ${email.value} has been added to the roast waiting list.`);
+            } else {
+                alert('Please enter a valid email address.');
+            }
+        });
+
+        // Pause ticker on hover
+        const tickerSpan = document.querySelector('.ticker span');
+        if (tickerSpan) {
+            tickerSpan.addEventListener('mouseenter', () => tickerSpan.style.animationPlayState = 'paused');
+            tickerSpan.addEventListener('mouseleave', () => tickerSpan.style.animationPlayState = 'running');
+        }
     </script>
 </body>
 </html>
