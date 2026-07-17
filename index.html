@@ -1,487 +1,1331 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
-  <title>SHOMOKAMI | RAW TORONTO BANGLA GAY CREW</title>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Share+Tech+Mono&family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=Bebas+Neue&display=swap" rel="stylesheet" />
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHOMOKAMI — RAW TORONTO BANGLA GAY CREW</title>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Share+Tech+Mono&family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=Bebas+Neue&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --black: #080808;
+            --void: #050505;
+            --surface: #111111;
+            --surface2: #1a1a1a;
+            --blood: #cc0000;
+            --blood-glow: #ff1a1a;
+            --rust: #b34700;
+            --amber: #ff6600;
+            --bone: #e8e0d5;
+            --ash: #888888;
+            --concrete: #3a3a3a;
+            --neon-red: #ff0000;
+            --deep-red: #8b0000;
+            --scanline-opacity: 0.03;
+            --noise-opacity: 0.04;
+            --border-raw: 2px solid #2a2a2a;
+        }
 
-    :root {
-      --black: #030303;
-      --void: #010101;
-      --surface: #0c0c0c;
-      --surface2: #1f1f1f;
-      --blood: #e60000;
-      --blood-glow: #ff3333;
-      --rust: #cc4400;
-      --amber: #ff7700;
-      --bone: #f0ead6;
-      --ash: #777777;
-      --concrete: #444444;
-      --neon-red: #ff0000;
-      --deep-red: #660000;
-      --border-raw: 2px solid #2c2c2c;
-      --scanline-opacity: 0.045;
-      --noise-opacity: 0.055;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    html {
-      scroll-behavior: smooth;
-      background: var(--void);
-    }
+        html {
+            scroll-behavior: smooth;
+            background: var(--void);
+        }
 
-    body {
-      font-family: 'Crimson Pro', 'Georgia', serif;
-      background: var(--black);
-      color: var(--bone);
-      line-height: 1.4;
-      overflow-x: hidden;
-      position: relative;
-      min-height: 100vh;
-      cursor: crosshair;
-      text-transform: uppercase;
-    }
+        body {
+            font-family: 'Crimson Pro', 'Georgia', serif;
+            background: var(--black);
+            color: var(--bone);
+            line-height: 1.5;
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
+            cursor: crosshair;
+        }
 
-    /* AGGRESSIVE NOISE & SCANLINES */
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 9999;
-      opacity: var(--noise-opacity);
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
-      background-repeat: repeat;
-      background-size: 140px 140px;
-      animation: aggressiveNoise 0.4s steps(4) infinite;
-    }
+        /* NOISE OVERLAY */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: var(--noise-opacity);
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 180px 180px;
+            animation: noiseShift 0.5s steps(5) infinite;
+        }
 
-    @keyframes aggressiveNoise {
-      0%, 100% { transform: translate(0, 0); }
-      25% { transform: translate(-8px, 6px); }
-      50% { transform: translate(10px, -4px); }
-      75% { transform: translate(-5px, -9px); }
-    }
+        @keyframes noiseShift {
+            0%,
+            100% {
+                transform: translate(0, 0);
+            }
+            25% {
+                transform: translate(-3px, 2px);
+            }
+            50% {
+                transform: translate(4px, -1px);
+            }
+            75% {
+                transform: translate(-2px, -3px);
+            }
+        }
 
-    body::after {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 9998;
-      opacity: 0.06;
-      background: repeating-linear-gradient(0deg, rgba(255,0,0,0.08) 0px, rgba(0,0,0,0.9) 3px, transparent 4px);
-    }
+        /* SCANLINES */
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9998;
+            opacity: var(--scanline-opacity);
+            background: repeating-linear-gradient(0deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(0, 0, 0, 0.5) 2px,
+                    rgba(0, 0, 0, 0.5) 4px);
+        }
 
-    ::-webkit-scrollbar { width: 7px; }
-    ::-webkit-scrollbar-track { background: #0a0a0a; }
-    ::-webkit-scrollbar-thumb { background: var(--blood); border-radius: 0; }
-    ::-webkit-scrollbar-thumb:hover { background: #ff5555; }
+        /* CUSTOM SCROLLBAR */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--void);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--blood);
+            border-radius: 0;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--blood-glow);
+        }
 
-    h1, h2, h3, h4 {
-      font-family: 'Anton', 'Bebas Neue', sans-serif;
-      font-weight: 400;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-    }
+        /* TYPOGRAPHY */
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Anton', 'Bebas Neue', sans-serif;
+            font-weight: 400;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+        }
 
-    .mono {
-      font-family: 'Share Tech Mono', 'Courier New', monospace;
-    }
+        .mono {
+            font-family: 'Share Tech Mono', 'Courier New', monospace;
+        }
 
-    /* HEADER - MORE BRUTAL */
-    header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 1000;
-      background: rgba(1, 1, 1, 0.94);
-      border-bottom: 3px solid var(--blood);
-      backdrop-filter: blur(12px);
-    }
+        /* HEADER */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(8, 8, 8, 0.92);
+            border-bottom: 1px solid #1f1f1f;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
 
-    .header-inner {
-      max-width: 1400px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0.7rem 2rem;
-    }
+        .header-inner {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.9rem 2rem;
+        }
 
-    .logo {
-      font-family: 'Anton', sans-serif;
-      font-size: 2rem;
-      color: var(--blood-glow);
-      text-decoration: none;
-      letter-spacing: 0.1em;
-      text-shadow: 0 0 20px red, 0 0 50px darkred;
-      transition: 0.2s;
-    }
-    .logo:hover {
-      color: #fff;
-      text-shadow: 0 0 40px red, 0 0 90px #ff0000;
-      animation: brutalGlitch 0.2s infinite;
-    }
+        .logo {
+            font-family: 'Anton', sans-serif;
+            font-size: 1.6rem;
+            color: var(--blood-glow);
+            text-decoration: none;
+            letter-spacing: 0.06em;
+            position: relative;
+            transition: all 0.2s;
+        }
+        .logo:hover {
+            color: #fff;
+            text-shadow: 0 0 30px var(--blood-glow), 0 0 60px var(--blood);
+            animation: logoGlitch 0.3s ease;
+        }
 
-    @keyframes brutalGlitch {
-      0% { transform: translate(2px, -1px); color: #0ff; }
-      25% { transform: translate(-3px, 2px); color: #f0f; }
-      50% { transform: translate(4px, 0); color: #ff0; }
-      75% { transform: translate(-1px, -3px); color: red; }
-    }
+        @keyframes logoGlitch {
+            0%,
+            100% {
+                transform: translate(0);
+            }
+            15% {
+                transform: translate(-3px, 1px);
+                color: #0ff;
+            }
+            30% {
+                transform: translate(3px, -1px);
+                color: #f0f;
+            }
+            45% {
+                transform: translate(0);
+                color: var(--blood-glow);
+            }
+        }
 
-    .nav-links a {
-      font-family: 'Share Tech Mono', monospace;
-      color: #ccc;
-      text-decoration: none;
-      font-size: 0.85rem;
-      font-weight: bold;
-      letter-spacing: 0.1em;
-      margin-left: 2rem;
-      border-bottom: 2px solid transparent;
-      transition: 0.2s;
-    }
-    .nav-links a:hover, .nav-links a.active {
-      color: #fff;
-      border-bottom: 2px solid var(--blood-glow);
-      text-shadow: 0 0 10px red;
-    }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        .nav-links a {
+            font-family: 'Share Tech Mono', monospace;
+            color: var(--ash);
+            text-decoration: none;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            transition: all 0.25s;
+            position: relative;
+            padding: 0.3rem 0;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--blood-glow);
+            transition: width 0.3s ease;
+        }
+        .nav-links a:hover {
+            color: #fff;
+        }
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        .nav-links a.active {
+            color: var(--blood-glow);
+        }
 
-    .hamburger { display: none; background: none; border: none; cursor: pointer; }
-    .hamburger span { display: block; width: 30px; height: 4px; background: var(--blood-glow); margin: 6px 0; transition: 0.3s; }
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+            z-index: 1001;
+        }
+        .hamburger span {
+            display: block;
+            width: 26px;
+            height: 3px;
+            background: var(--bone);
+            margin: 5px 0;
+            transition: all 0.3s;
+        }
 
-    /* HERO - PURE AGGRESSION */
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      padding: 7rem 2rem 3rem;
-      background: radial-gradient(circle at 30% 40%, rgba(230,0,0,0.18) 0%, transparent 70%),
-                  radial-gradient(circle at 70% 20%, rgba(255,119,0,0.25) 0%, transparent 60%),
-                  #020202;
-      overflow: hidden;
-      border-bottom: 4px solid #4d0000;
-    }
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 8rem 2rem 4rem;
+            background:
+                radial-gradient(ellipse at 30% 50%, rgba(204, 0, 0, 0.08) 0%, transparent 60%),
+                radial-gradient(ellipse at 70% 30%, rgba(255, 102, 0, 0.05) 0%, transparent 50%),
+                var(--black);
+            overflow: hidden;
+        }
 
-    .hero-bg-image {
-      position: absolute;
-      top: 0; left: 0; width: 100%; height: 100%;
-      object-fit: cover;
-      opacity: 0.3;
-      filter: grayscale(100%) contrast(1.6) brightness(0.4);
-      pointer-events: none;
-      z-index: 0;
-    }
+        .hero-bg-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.25;
+            filter: grayscale(100%) contrast(1.4) brightness(0.5);
+            pointer-events: none;
+            z-index: 0;
+        }
 
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      text-align: center;
-      max-width: 950px;
-    }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 900px;
+        }
 
-    .hero-tag {
-      font-family: 'Share Tech Mono', monospace;
-      font-size: 0.8rem;
-      letter-spacing: 0.3em;
-      color: var(--amber);
-      background: rgba(180, 40, 0, 0.25);
-      padding: 0.5rem 1.5rem;
-      border: 2px solid #992200;
-      display: inline-block;
-      margin-bottom: 2rem;
-      text-shadow: 0 0 10px orange;
-    }
+        .hero-tag {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.75rem;
+            letter-spacing: 0.25em;
+            color: var(--amber);
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            padding: 0.4rem 1.2rem;
+            border: 1px solid #2f1a0a;
+            background: rgba(255, 102, 0, 0.04);
+        }
 
-    .hero h1 {
-      font-size: clamp(4rem, 11vw, 9rem);
-      line-height: 0.85;
-      color: #ffffff;
-      text-shadow: 6px 6px 0 #550000, 0 0 40px red;
-      letter-spacing: 0.03em;
-    }
+        .hero h1 {
+            font-size: clamp(3.5rem, 9vw, 8rem);
+            line-height: 0.9;
+            margin-bottom: 1rem;
+            color: #fff;
+            position: relative;
+            letter-spacing: 0.02em;
+        }
 
-    .glitch-text {
-      display: inline-block;
-      color: var(--blood-glow);
-      animation: heavyGlitch 3s infinite;
-      text-shadow: 5px 0 0 rgba(255,0,0,0.8), -5px 0 0 rgba(0,200,255,0.7);
-    }
+        .hero h1 .glitch-text {
+            display: inline-block;
+            position: relative;
+            color: var(--blood-glow);
+            animation: glitchSkew 4s infinite ease-in-out;
+        }
 
-    @keyframes heavyGlitch {
-      0%, 94%, 100% { transform: skew(0deg); }
-      95% { transform: skew(4deg, 2deg); text-shadow: -10px 4px 0 red, 10px -4px 0 cyan; }
-      96% { transform: skew(-3deg, -1deg); text-shadow: 8px -2px 0 orange, -8px 2px 0 magenta; }
-    }
+        @keyframes glitchSkew {
+            0%,
+            90%,
+            100% {
+                transform: skew(0deg);
+                text-shadow: 3px 0 0 rgba(255, 0, 0, 0.5), -3px 0 0 rgba(0, 200, 255, 0.4);
+            }
+            91% {
+                transform: skew(2deg, 1deg);
+                text-shadow: -6px 2px 0 rgba(255, 0, 0, 0.7), 6px -2px 0 rgba(0, 200, 255, 0.6);
+            }
+            92% {
+                transform: skew(-2deg, -1deg);
+                text-shadow: 4px -1px 0 rgba(255, 0, 0, 0.6), -4px 1px 0 rgba(0, 200, 255, 0.5);
+            }
+            93% {
+                transform: skew(0);
+                text-shadow: 3px 0 0 rgba(255, 0, 0, 0.5), -3px 0 0 rgba(0, 200, 255, 0.4);
+            }
+        }
 
-    .hero-sub {
-      font-size: 1.6rem;
-      font-weight: bold;
-      color: #ddd;
-      font-style: italic;
-      margin: 1.5rem 0 2rem;
-      text-shadow: 0 0 15px black;
-    }
+        .hero-sub {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.4rem;
+            color: var(--ash);
+            font-style: italic;
+            margin-bottom: 2rem;
+            letter-spacing: 0.04em;
+        }
 
-    .btn-raw {
-      background: transparent;
-      border: 3px solid var(--blood);
-      color: white;
-      font-family: 'Anton', sans-serif;
-      font-size: 1.2rem;
-      padding: 1.2rem 3rem;
-      letter-spacing: 0.15em;
-      background: rgba(200,0,0,0.15);
-      backdrop-filter: blur(4px);
-      transition: 0.3s;
-      text-decoration: none;
-      display: inline-block;
-      cursor: pointer;
-    }
-    .btn-raw:hover {
-      background: var(--blood);
-      box-shadow: 0 0 70px red, 0 0 140px darkred;
-      transform: scale(1.03);
-      border-color: #fff;
-    }
+        .hero-divider {
+            width: 120px;
+            height: 4px;
+            background: var(--blood);
+            margin: 2rem auto;
+            position: relative;
+        }
+        .hero-divider::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 130px;
+            width: 18px;
+            height: 4px;
+            background: var(--amber);
+        }
 
-    section {
-      padding: 5rem 2rem;
-      position: relative;
-      z-index: 2;
-    }
+        .btn-raw {
+            display: inline-block;
+            font-family: 'Anton', sans-serif;
+            font-size: 1rem;
+            letter-spacing: 0.1em;
+            text-decoration: none;
+            color: #fff;
+            background: transparent;
+            border: 2px solid var(--blood);
+            padding: 1rem 2.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            text-transform: uppercase;
+        }
+        .btn-raw:hover {
+            background: var(--blood);
+            color: #fff;
+            box-shadow: 0 0 50px rgba(204, 0, 0, 0.5), 0 0 100px rgba(204, 0, 0, 0.2);
+            transform: translateY(-2px);
+        }
+        .btn-raw::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s;
+        }
+        .btn-raw:hover::before {
+            left: 100%;
+        }
 
-    .section-container {
-      max-width: 1300px;
-      margin: 0 auto;
-    }
+        .btn-raw--inverse {
+            border-color: var(--bone);
+            color: var(--bone);
+        }
+        .btn-raw--inverse:hover {
+            background: var(--bone);
+            color: var(--black);
+            box-shadow: 0 0 40px rgba(232, 224, 213, 0.3);
+        }
 
-    h2 {
-      font-size: clamp(2.8rem, 6vw, 5rem);
-      color: white;
-      margin-bottom: 1rem;
-      text-shadow: 3px 3px 0 #330000;
-    }
-    .accent { color: var(--blood-glow); text-shadow: 0 0 25px red; }
+        /* SECTIONS */
+        section {
+            padding: 6rem 2rem;
+            position: relative;
+            z-index: 1;
+        }
 
-    .members-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-    }
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-    .member-card {
-      background: #0a0a0a;
-      border: 2px solid #2e0000;
-      transition: 0.3s;
-      position: relative;
-    }
-    .member-card:hover {
-      border-color: #ff0000;
-      transform: translateY(-12px);
-      box-shadow: 0 30px 60px rgba(255,0,0,0.5);
-      background: #110000;
-    }
-    .member-img-wrap { height: 330px; position: relative; overflow: hidden; }
-    .member-img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(40%) contrast(1.3); }
-    .member-card:hover .member-img { filter: grayscale(0%) contrast(1.5); transform: scale(1.08); }
-    .member-badge {
-      position: absolute; top: 10px; right: 10px;
-      background: #cc0000; color: white; font-weight: bold; padding: 0.4rem 1rem;
-      font-family: 'Share Tech Mono'; letter-spacing: 0.1em;
-    }
-    .card-content { padding: 1.5rem; }
-    .card-content h3 { font-size: 2rem; color: #fff; }
-    .stat-pill {
-      background: #1a0000; border: 1px solid #aa0000; padding: 0.3rem 0.8rem;
-      font-family: 'Share Tech Mono'; font-size: 0.7rem; color: #ff9999;
-    }
-    .meter-fill { background: #ff0000; height: 5px; }
+        .section-label {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.7rem;
+            letter-spacing: 0.3em;
+            color: var(--blood-glow);
+            display: block;
+            margin-bottom: 0.8rem;
+            text-transform: uppercase;
+        }
 
-    /* LICENSE AGGRESSIVE */
-    .license-container {
-      background: #050505; border: 3px solid #660000; padding: 2rem;
-      font-family: 'Share Tech Mono'; font-size: 0.9rem; color: #bbb;
-    }
-    .keyword { color: #ff3333; font-weight: bold; }
-    .string { color: #ffaa00; }
+        h2 {
+            font-size: clamp(2.2rem, 5vw, 4rem);
+            margin-bottom: 1rem;
+            color: #fff;
+            line-height: 1;
+            letter-spacing: 0.02em;
+        }
+        h2 .accent {
+            color: var(--blood-glow);
+        }
 
-    footer {
-      background: #010101; border-top: 4px solid #880000;
-      padding: 3rem; text-align: center;
-    }
+        .section-intro {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.2rem;
+            color: var(--ash);
+            max-width: 600px;
+            margin-bottom: 3rem;
+            font-style: italic;
+            line-height: 1.6;
+        }
 
-    @media (max-width: 768px) {
-      .hamburger { display: block; }
-      .nav-links { display: none; flex-direction: column; background: black; position: absolute; width: 100%; left:0; top:100%; padding:1rem; }
-      .nav-links.open { display: flex; }
-      .hero h1 { font-size: 3rem; }
-    }
-  </style>
+        /* MEMBERS GRID */
+        .members-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .member-card {
+            background: var(--surface);
+            border: 1px solid #1f1f1f;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1.2);
+            position: relative;
+            group: true;
+        }
+        .member-card:hover {
+            border-color: var(--blood);
+            transform: translateY(-10px);
+            box-shadow: 0 25px 60px rgba(204, 0, 0, 0.3), 0 0 0 1px var(--blood);
+            z-index: 10;
+        }
+
+        .member-img-wrap {
+            position: relative;
+            overflow: hidden;
+            height: 320px;
+        }
+        .member-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(30%) contrast(1.2);
+            transition: all 0.5s ease;
+        }
+        .member-card:hover .member-img {
+            filter: grayscale(0%) contrast(1.1);
+            transform: scale(1.05);
+        }
+        .member-img-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 50%;
+            background: linear-gradient(to top, rgba(8, 8, 8, 0.9), transparent);
+            pointer-events: none;
+        }
+        .member-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.65rem;
+            letter-spacing: 0.15em;
+            background: var(--blood);
+            color: #fff;
+            padding: 0.35rem 0.8rem;
+            z-index: 2;
+        }
+        .member-badge--top {
+            background: #1a1a1a;
+            border: 1px solid var(--amber);
+            color: var(--amber);
+        }
+        .member-badge--vers {
+            background: #1a1a1a;
+            border: 1px solid #8b00cc;
+            color: #c47eff;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+            position: relative;
+        }
+        .card-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.2rem;
+            color: #fff;
+            letter-spacing: 0.03em;
+        }
+        .card-role {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--amber);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 0.8rem;
+        }
+        .card-stats {
+            display: flex;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+            margin: 0.8rem 0;
+        }
+        .stat-pill {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.6rem;
+            letter-spacing: 0.08em;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid #2a2a2a;
+            padding: 0.3rem 0.7rem;
+            color: var(--ash);
+            text-transform: uppercase;
+        }
+        .card-desc {
+            font-size: 0.95rem;
+            color: #999;
+            margin-top: 0.6rem;
+            line-height: 1.5;
+        }
+        .card-meter {
+            margin-top: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.6rem;
+            letter-spacing: 0.06em;
+            color: var(--ash);
+            text-transform: uppercase;
+        }
+        .meter-bar {
+            flex: 1;
+            height: 3px;
+            background: #1f1f1f;
+            position: relative;
+            overflow: hidden;
+        }
+        .meter-fill {
+            height: 100%;
+            background: var(--blood);
+            transition: width 0.8s ease;
+        }
+        .meter-fill--amber {
+            background: var(--amber);
+        }
+        .meter-fill--full {
+            background: var(--blood-glow);
+            width: 100%;
+        }
+
+        /* LICENSE / MANIFESTO SECTION */
+        #license {
+            background: var(--void);
+            border-top: 1px solid #1a1a1a;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        .license-container {
+            background: #0d0d0d;
+            border: 1px solid #1f1f1f;
+            padding: 3rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .license-container::before {
+            content: 'LICENSE.TXT';
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.55rem;
+            color: #333;
+            letter-spacing: 0.2em;
+        }
+        .license-line-nums {
+            position: absolute;
+            left: 1rem;
+            top: 3rem;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.6rem;
+            color: #222;
+            line-height: 2;
+            pointer-events: none;
+            user-select: none;
+        }
+        .license-content {
+            padding-left: 3rem;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.8rem;
+            line-height: 2;
+            color: #aaa;
+        }
+        .license-content .keyword {
+            color: var(--blood-glow);
+        }
+        .license-content .string {
+            color: var(--amber);
+        }
+        .license-content .comment {
+            color: #444;
+            font-style: italic;
+        }
+        .license-content .highlight {
+            color: #fff;
+            font-weight: bold;
+        }
+        .cursor-blink {
+            display: inline-block;
+            width: 8px;
+            height: 14px;
+            background: var(--blood-glow);
+            animation: blink 1s step-end infinite;
+            vertical-align: middle;
+            margin-left: 2px;
+        }
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+
+        /* TERRITORY SECTION */
+        #territory {
+            background: var(--black);
+        }
+        .territory-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        .territory-map-placeholder {
+            aspect-ratio: 1;
+            background: var(--surface);
+            border: 1px solid #1f1f1f;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .map-dot {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: var(--blood-glow);
+            border-radius: 50%;
+            animation: pulseDot 2s infinite;
+        }
+        @keyframes pulseDot {
+            0%,
+            100% {
+                box-shadow: 0 0 10px var(--blood-glow), 0 0 30px var(--blood);
+            }
+            50% {
+                box-shadow: 0 0 25px var(--blood-glow), 0 0 60px var(--blood);
+            }
+        }
+        .map-label {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.6rem;
+            color: var(--blood-glow);
+            letter-spacing: 0.15em;
+            position: absolute;
+        }
+        .territory-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+        .territory-info p {
+            color: #999;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        /* EVENTS */
+        .events-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .event-item {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            padding: 1.5rem;
+            border: 1px solid #1a1a1a;
+            background: var(--surface);
+            transition: all 0.3s;
+            cursor: default;
+        }
+        .event-item:hover {
+            border-color: var(--blood);
+            background: #181818;
+        }
+        .event-date {
+            font-family: 'Anton', sans-serif;
+            font-size: 2rem;
+            color: var(--blood-glow);
+            min-width: 70px;
+            text-align: center;
+            line-height: 1;
+        }
+        .event-date span {
+            display: block;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.55rem;
+            color: var(--ash);
+            letter-spacing: 0.1em;
+        }
+        .event-info h4 {
+            font-size: 1.2rem;
+            color: #fff;
+            margin-bottom: 0.3rem;
+        }
+        .event-info p {
+            font-size: 0.85rem;
+            color: #777;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--void);
+            border-top: 1px solid #1a1a1a;
+            padding: 4rem 2rem 2rem;
+            text-align: center;
+        }
+        .footer-crest {
+            font-family: 'Anton', sans-serif;
+            font-size: 3rem;
+            color: var(--blood-glow);
+            letter-spacing: 0.08em;
+            margin-bottom: 1rem;
+        }
+        .footer-tagline {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.65rem;
+            letter-spacing: 0.2em;
+            color: #444;
+            margin-bottom: 1.5rem;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+        .footer-links a {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.7rem;
+            color: #555;
+            text-decoration: none;
+            letter-spacing: 0.1em;
+            transition: color 0.3s;
+        }
+        .footer-links a:hover {
+            color: var(--blood-glow);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(8, 8, 8, 0.97);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1.2rem;
+                border-bottom: 1px solid #1f1f1f;
+            }
+            .nav-links.open {
+                display: flex;
+            }
+            .territory-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            .members-grid {
+                grid-template-columns: 1fr;
+            }
+            .event-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+            .license-content {
+                padding-left: 1.5rem;
+                font-size: 0.7rem;
+            }
+            .license-line-nums {
+                left: 0.3rem;
+                font-size: 0.5rem;
+            }
+            section {
+                padding: 4rem 1rem;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .members-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .territory-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 1.5rem;
+            }
+        }
+
+        /* GLITCH DECORATION */
+        .glitch-decor {
+            position: absolute;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.5rem;
+            color: #1a1a1a;
+            letter-spacing: 0.3em;
+            pointer-events: none;
+            user-select: none;
+            z-index: 0;
+        }
+
+        /* STAGGERED REVEAL ON LOAD */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: revealUp 0.8s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+        }
+        .reveal-delay-1 {
+            animation-delay: 0.1s;
+        }
+        .reveal-delay-2 {
+            animation-delay: 0.2s;
+        }
+        .reveal-delay-3 {
+            animation-delay: 0.35s;
+        }
+        .reveal-delay-4 {
+            animation-delay: 0.5s;
+        }
+        .reveal-delay-5 {
+            animation-delay: 0.65s;
+        }
+
+        @keyframes revealUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* HOVER GLITCH FOR CARDS */
+        @keyframes cardGlitch {
+            0%,
+            100% {
+                clip-path: inset(0 0 0 0);
+            }
+            20% {
+                clip-path: inset(10% 0 85% 0);
+            }
+            40% {
+                clip-path: inset(80% 0 5% 0);
+            }
+            60% {
+                clip-path: inset(30% 0 60% 0);
+            }
+            80% {
+                clip-path: inset(0 0 0 0);
+            }
+        }
+        .member-card:active {
+            animation: cardGlitch 0.3s steps(1);
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <div class="header-inner">
-      <a href="#" class="logo">SHOMOKAMI</a>
-      <button class="hamburger" id="hamburger">☰</button>
-      <nav class="nav-links" id="navLinks">
-        <a href="#home" class="active">HOME</a>
-        <a href="#members">MEAT</a>
-        <a href="#license">LICENSE</a>
-        <a href="#territory">TERRITORY</a>
-        <a href="#events">SESSIONS</a>
-        <a href="#join">JOIN</a>
-      </nav>
-    </div>
-  </header>
 
-  <section id="home" class="hero">
-    <img src="https://i.ibb.co/PzsXpP8v/Whats-App-Image-2026-07-16-at-23-12-39.jpg" alt="bg" class="hero-bg-image" />
-    <div class="hero-content">
-      <span class="hero-tag">⚠️ TORONTO BANGLA TOWN · NO MERCY ⚠️</span>
-      <h1>BRUTAL <span class="glitch-text">FUCKING</span><br>WELCOME</h1>
-      <p class="hero-sub">RAW GAY BANGLA CREW. NO VANILLA. PURE AGGRESSION.</p>
-      <a href="#members" class="btn-raw">👊 MEET THE SAVAGE MEAT 👊</a>
-    </div>
-  </section>
-
-  <section id="members">
-    <div class="section-container">
-      <h2>FRESH <span class="accent">FUCKING</span> MEAT</h2>
-      <div class="members-grid">
-        <!-- Member cards with aggressive descriptions -->
-        <div class="member-card">
-          <div class="member-img-wrap">
-            <img src="https://i.ibb.co/PzsXpP8v/Whats-App-Image-2026-07-16-at-23-12-39.jpg" alt="Mahi" class="member-img" />
-            <span class="member-badge">DESTROYABLE BOTTOM</span>
-          </div>
-          <div class="card-content">
-            <h3>MAHI MAHDY</h3>
-            <p>🔥 HUNGRY SLUT — NO LIMITS. WRECKS HIS HOLE DAILY.</p>
-            <div class="card-stats"><span class="stat-pill">22</span><span class="stat-pill">SLIM</span><span class="stat-pill">DHAKA</span></div>
-          </div>
+    <header>
+        <div class="header-inner">
+            <a href="#" class="logo">SHOMOKAMI</a>
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="nav-links" id="navLinks">
+                <a href="#home" class="active">HOME</a>
+                <a href="#members">NEW MEAT</a>
+                <a href="#license">LICENSE.TXT</a>
+                <a href="#territory">TERRITORY</a>
+                <a href="#events">SESSIONS</a>
+                <a href="#join">JOIN PACK</a>
+            </nav>
         </div>
-        <div class="member-card">
-          <div class="member-img-wrap">
-            <img src="https://i.ibb.co/wND5DDHM/Whats-App-Image-2026-07-16-at-23-12-40.jpg" alt="Noor" class="member-img" />
-            <span class="member-badge">AGGRESSIVE TOP</span>
-          </div>
-          <div class="card-content">
-            <h3>NOOR</h3>
-            <p>🍆 8" UNCUT BREEDER. POUNDS WITHOUT WARNING.</p>
-            <div class="card-stats"><span class="stat-pill">26</span><span class="stat-pill">MUSCLE</span><span class="stat-pill">CTG</span></div>
-          </div>
+    </header>
+
+    <!-- HERO -->
+    <section id="home" class="hero">
+        <img src="https://i.ibb.co/PzsXpP8v/Whats-App-Image-2026-07-16-at-23-12-39.jpg" alt="" class="hero-bg-image" aria-hidden="true">
+        <div class="hero-content">
+            <span class="hero-tag reveal">📍 TORONTO · BANGLA TOWN · EST. 2026</span>
+            <h1 class="reveal reveal-delay-1">RAW <span class="glitch-text">FUCKING</span><br>WELCOME</h1>
+            <p class="hero-sub reveal reveal-delay-2">Toronto Bangla Town Gay Crew — No Vanilla. No Limits. Pure Fire.</p>
+            <div class="hero-divider reveal reveal-delay-3"></div>
+            <p class="reveal reveal-delay-3" style="font-family:'Share Tech Mono',monospace;font-size:0.75rem;color:#777;letter-spacing:0.08em;max-width:550px;margin:0 auto 2rem;">
+                Fresh Bangladeshi meat just landed. These horny brothers are ready to get fucked and dominate the scene.
+                Roots deep, cocks deeper.
+            </p>
+            <a href="#members" class="btn-raw reveal reveal-delay-4">MEET THE NEW HOLES & TOPS</a>
         </div>
-        <div class="member-card">
-          <div class="member-img-wrap">
-            <img src="https://i.ibb.co/1YB7VChP/Whats-App-Image-2026-07-16-at-23-18-51.jpg" alt="Zasim" class="member-img" />
-            <span class="member-badge">THROAT DEMON</span>
-          </div>
-          <div class="card-content">
-            <h3>ZASIM</h3>
-            <p>😈 SWALLOWS EVERY DROP. ZERO GAG REFLEX.</p>
-            <div class="card-stats"><span class="stat-pill">24</span><span class="stat-pill">TONED</span><span class="stat-pill">SYLHET</span></div>
-          </div>
+        <span class="glitch-decor" style="top:15%;left:5%;">01010011 01001000 01001111</span>
+        <span class="glitch-decor" style="bottom:20%;right:8%;">RAW_DATA//2026</span>
+    </section>
+
+    <!-- MEMBERS -->
+    <section id="members">
+        <div class="section-container">
+            <span class="section-label reveal">// SECTION_01</span>
+            <h2 class="reveal">NEW <span class="accent">FUCKING</span> MEAT</h2>
+            <p class="section-intro reveal reveal-delay-1">
+                Four fresh Bangladeshi studs hit Toronto Bangla Town. Each one hungry, each one ready.
+                Browse the roster. Pick your poison.
+            </p>
+            <div class="members-grid">
+                <!-- MAHI MAHDY -->
+                <div class="member-card reveal reveal-delay-2">
+                    <div class="member-img-wrap">
+                        <img src="https://i.ibb.co/PzsXpP8v/Whats-App-Image-2026-07-16-at-23-12-39.jpg" alt="Mahi Mahdy" class="member-img" loading="lazy">
+                        <div class="member-img-overlay"></div>
+                        <span class="member-badge">BOTTOM</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Mahi Mahdy</h3>
+                        <p class="card-role">🔥 Hungry Bottom Bitch</p>
+                        <div class="card-stats">
+                            <span class="stat-pill">22 YRS</span>
+                            <span class="stat-pill">SLIM BUILD</span>
+                            <span class="stat-pill">NO LIMITS</span>
+                            <span class="stat-pill">DHAKA ROOTS</span>
+                        </div>
+                        <p class="card-desc">Fresh Bangladeshi hole ready to get wrecked. Takes it deep and hard — no warmup needed. Begging for cock 24/7. Come destroy this tight little slut in Bangla Town.</p>
+                        <div class="card-meter">
+                            <span>ENDURANCE</span>
+                            <div class="meter-bar"><div class="meter-fill meter-fill--full" style="width:95%"></div></div>
+                            <span>95%</span>
+                        </div>
+                        <div class="card-meter">
+                            <span>SUBMISSIVE</span>
+                            <div class="meter-bar"><div class="meter-fill meter-fill--full" style="width:100%"></div></div>
+                            <span>100%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NOOR -->
+                <div class="member-card reveal reveal-delay-3">
+                    <div class="member-img-wrap">
+                        <img src="https://i.ibb.co/wND5DDHM/Whats-App-Image-2026-07-16-at-23-12-40.jpg" alt="Noor" class="member-img" loading="lazy">
+                        <div class="member-img-overlay"></div>
+                        <span class="member-badge member-badge--top">TOP BEAST</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Noor</h3>
+                        <p class="card-role">🍆 Aggressive Top — Breeds Hard</p>
+                        <div class="card-stats">
+                            <span class="stat-pill">26 YRS</span>
+                            <span class="stat-pill">MUSCULAR</span>
+                            <span class="stat-pill">8" UNCUT</span>
+                            <span class="stat-pill">CHITTAGONG</span>
+                        </div>
+                        <p class="card-desc">Dominant stud ready to pound fresh Bangladeshi ass. Doesn't hold back — when he breeds, you feel it for days. Raw and relentless. Holes get wrecked, no exceptions.</p>
+                        <div class="card-meter">
+                            <span>DOMINANCE</span>
+                            <div class="meter-bar"><div class="meter-fill meter-fill--full" style="width:98%"></div></div>
+                            <span>98%</span>
+                        </div>
+                        <div class="card-meter">
+                            <span>STAMINA</span>
+                            <div class="meter-bar"><div class="meter-fill meter-fill--amber" style="width:92%"></div></div>
+                            <span>92%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ZASIM -->
+                <div class="member-card reveal reveal-delay-4">
+                    <div class="member-img-wrap">
+                        <img src="https://i.ibb.co/1YB7VChP/Whats-App-Image-2026-07-16-at-23-18-51.jpg" alt="Zasim" class="member-img" loading="lazy">
+                        <div class="member-img-overlay"></div>
+                        <span class="member-badge member-badge--vers">COCK WORSHIPPER</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Shudipta</h3>
+                        <p class="card-role">😈 Blowjob King — Deepthroat Expert</p>
+                        <div class="card-stats">
+                            <span class="stat-pill">24 YRS</span>
+                            <span class="stat-pill">TONED</span>
+                            <span class="stat-pill">SWALLOWS</span>
+                            <span class="stat-pill">SYLHET</span>
+                        </div>
+                        <p class="card-desc">This thirsty slut lives for sucking cock. Best head in Bangla Town — no gag reflex, all enthusiasm. Swallows loads like a pro. Hit him up when you need release.</p>
+                        <div class="card-meter">
+                            <span>DEEPTHROAT</span>
+                            <div class="meter-bar"><div class="meter-fill meter-fill--full" style="width:99%"></div></div>
+                            <span>99%</span>
+                        </div>
+                        <div class="card-meter">
+                            <span>ENTHUSIASM</span>
+                            <div class="meter-bar"><div class="meter-fill meter-fill--amber" style="width:100%"></div></div>
+                            <span>100%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SHUDIPTA -->
+                <div class="member-card reveal reveal-delay-5">
+                    <div class="member-img-wrap">
+                        <img src="https://i.ibb.co/Rk551NXX/Whats-App-Image-2026-07-16-at-23-12-50.jpg" alt="Shudipta" class="member-img" loading="lazy">
+                        <div class="member-img-overlay"></div>
+                        <span class="member-badge">GANGBANG SLUT</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Zasim</h3>
+                        <p class="card-role">🕳️ Takes Up to 4 Cocks in His Ass</p>
+                        <div class="card-stats">
+                            <span class="stat-pill">23 YRS</span>
+                            <span class="stat-pill">THICK</span>
+                            <span class="stat-pill">GROUP ONLY</span>
+                            <span class="stat-pill">DHAKA</span>
+                        </div>
+                        <p class="card-desc">Maximum 4 tops at once. This hole is built for hardcore gang action. Group breeding sessions only — the more cocks, the better. Toronto's premier gangbang receptacle.</p>
+                        <div class="card-meter">
+                            <span>CAPACITY</span>
+                            <div class="meter-bar"><div class="meter-fill meter-fill--full" style="width:90%"></div></div>
+                            <span>4 COCKS</span>
+                        </div>
+                        <div class="card-meter">
+                            <span>INSATIABLE</span>
+                            <div class="meter-bar"><div class="meter-fill meter-fill--amber" style="width:100%"></div></div>
+                            <span>∞</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="member-card">
-          <div class="member-img-wrap">
-            <img src="https://i.ibb.co/Rk551NXX/Whats-App-Image-2026-07-16-at-23-12-50.jpg" alt="Shudipta" class="member-img" />
-            <span class="member-badge">GANGBANG PIG</span>
-          </div>
-          <div class="card-content">
-            <h3>SHUDIPTA</h3>
-            <p>🕳️ TAKES 4 COCKS SIMULTANEOUSLY. INSATIABLE.</p>
-            <div class="card-stats"><span class="stat-pill">23</span><span class="stat-pill">THICK</span><span class="stat-pill">DHAKA</span></div>
-          </div>
+    </section>
+
+    <!-- LICENSE.TXT MANIFESTO -->
+    <section id="license">
+        <div class="section-container">
+            <span class="section-label reveal">// SECTION_02</span>
+            <h2 class="reveal">LICENSE<span class="accent">.TXT</span></h2>
+            <p class="section-intro reveal reveal-delay-1">
+                The complete terms. The raw manifesto. The code of the pack. Read it. Live it. Fuck by it.
+            </p>
+            <div class="license-container reveal reveal-delay-2">
+                <div class="license-line-nums">
+                    001<br>002<br>003<br>004<br>005<br>006<br>007<br>008<br>009<br>010<br>011<br>012<br>013<br>014<br>015<br>016<br>017<br>018<br>019<br>020<br>021<br>022<br>023<br>024<br>025<br>026<br>027<br>028<br>029<br>030<br>031<br>032<br>033<br>034<br>035<br>036<br>037<br>038<br>039<br>040
+                </div>
+                <div class="license-content">
+                    <span class="comment">/* SHOMOKAMI LICENSE.TXT — COMPLETE TERMS */</span><br>
+                    <span class="comment">/* Last updated: 2026-07-16 — Toronto Bangla Town */</span><br><br>
+                    <span class="keyword">PACK</span> <span class="string">"SHOMOKAMI"</span> = {<br>
+                    &nbsp;&nbsp;<span class="keyword">location</span>: <span class="string">"Toronto Bangla Town"</span>,<br>
+                    &nbsp;&nbsp;<span class="keyword">founded</span>: <span class="string">"2026"</span>,<br>
+                    &nbsp;&nbsp;<span class="keyword">motto</span>: <span class="string">"Roots deep, cocks deeper. Fuck with pride."</span>,<br>
+                    &nbsp;&nbsp;<span class="keyword">members</span>: [<span class="string">"Mahi_Mahdy"</span>, <span class="string">"Noor"</span>, <span class="string">"Zasim"</span>, <span class="string">"Shudipta"</span>],<br>
+                    &nbsp;&nbsp;<span class="keyword">status</span>: <span class="highlight">ACTIVE_RAW</span><br>
+                    };<br><br>
+                    <span class="comment">/* TERMS OF ENGAGEMENT */</span><br>
+                    <span class="keyword">TERM_01</span>: <span class="string">"No vanilla shit. Ever."</span><br>
+                    <span class="keyword">TERM_02</span>: <span class="string">"Consent is mandatory. Limits are discussed upfront."</span><br>
+                    <span class="keyword">TERM_03</span>: <span class="string">"Discretion is absolute. What happens in the pack stays in the pack."</span><br>
+                    <span class="keyword">TERM_04</span>: <span class="string">"Brotherhood above all. We ride together, we cum together."</span><br>
+                    <span class="keyword">TERM_05</span>: <span class="string">"New meat must be vouched. No randoms, no cops, no fakes."</span><br>
+                    <span class="keyword">TERM_06</span>: <span class="string">"Sessions are raw by default. Protection available on request."</span><br>
+                    <span class="keyword">TERM_07</span>: <span class="string">"Respect the hierarchy. Tops lead, bottoms submit, vers switch."</span><br>
+                    <span class="keyword">TERM_08</span>: <span class="string">"No recording without explicit consent from ALL parties."</span><br>
+                    <span class="keyword">TERM_09</span>: <span class="string">"Community events are sacred. Show up or lose your spot."</span><br>
+                    <span class="keyword">TERM_10</span>: <span class="string">"Pride is our flag. Bangla is our root. Toronto is our territory."</span><br><br>
+                    <span class="comment">/* END OF TERMS — VIOLATION = EXPULSION */</span><br>
+                    <span class="highlight">LICENSE_ACTIVE</span><span class="cursor-blink"></span>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="license">
-    <div class="section-container">
-      <h2>LICENSE<span class="accent">.TXT</span></h2>
-      <div class="license-container">
-        <p><span class="keyword">PACK</span> <span class="string">"SHOMOKAMI"</span> = {</p>
-        <p><span class="keyword">location</span>: <span class="string">"Toronto Bangla Town"</span>,</p>
-        <p><span class="keyword">motto</span>: <span class="string">"COCKS DEEPER, FUCK HARDER."</span>,</p>
-        <p><span class="keyword">TERM_01</span>: <span class="string">"NO VANILLA. AGGRESSIVE RAW DEFAULT."</span></p>
-        <p><span class="keyword">TERM_02</span>: <span class="string">"CONSENT IS LAW. LIMITS RESPECTED."</span></p>
-        <p><span class="keyword">TERM_03</span>: <span class="string">"SNITCHES GET BANNED."</span></p>
-        <p>};</p>
-      </div>
-    </div>
-  </section>
+    <!-- TERRITORY -->
+    <section id="territory">
+        <div class="section-container">
+            <span class="section-label reveal">// SECTION_03</span>
+            <h2 class="reveal">OUR <span class="accent">TERRITORY</span></h2>
+            <div class="territory-grid">
+                <div class="territory-map-placeholder reveal reveal-delay-1">
+                    <div class="map-dot" style="top:45%;left:55%;"></div>
+                    <span class="map-label" style="top:38%;left:52%;">BANGLA TOWN</span>
+                    <div class="map-dot" style="top:52%;left:48%;width:7px;height:7px;animation-delay:0.5s;"></div>
+                    <span class="map-label" style="top:56%;left:43%;font-size:0.5rem;">DANFORTH</span>
+                    <div class="map-dot" style="top:40%;left:62%;width:9px;height:9px;animation-delay:1s;"></div>
+                    <span class="map-label" style="top:35%;left:60%;font-size:0.5rem;">CRESCENT TOWN</span>
+                    <p style="font-family:'Share Tech Mono',monospace;font-size:0.7rem;color:#555;position:absolute;bottom:1.5rem;letter-spacing:0.15em;">TORONTO · ONTARIO · CANADA</p>
+                </div>
+                <div class="territory-info reveal reveal-delay-2">
+                    <h3>Bangla Town, Toronto</h3>
+                    <p>
+                        The heart of our operations. Danforth Avenue east of Victoria Park — the pulsing center
+                        of Toronto's Bangladeshi community. This is where we link up, where we host sessions,
+                        and where the underground thrives.
+                    </p>
+                    <p>
+                        From Crescent Town to Oakridge, the Bangla gay scene is raw, real, and growing.
+                        Shomokami is at the center — the first explicitly raw Bangladeshi gay crew in the GTA.
+                        No pretenses. No closet. Just pure, unapologetic desire.
+                    </p>
+                    <div class="card-stats" style="margin-top:1rem;">
+                        <span class="stat-pill">DANFORTH AVE</span>
+                        <span class="stat-pill">CRESCENT TOWN</span>
+                        <span class="stat-pill">OAKRIDGE</span>
+                        <span class="stat-pill">GTA EAST</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <section id="territory">
-    <div class="section-container">
-      <h2>OUR <span class="accent">TERRITORY</span></h2>
-      <p style="font-size:1.4rem; color:#ff6666;">DANFORTH · CRESCENT TOWN · OAKRIDGE. WE OWN THE NIGHT.</p>
-      <div style="background:#0a0a0a; padding:2rem; margin-top:1rem; border-left:6px solid red;">
-        <p>UNDERGROUND BANGLA GAY SCENE — RAW AND DOMINANT. NO PRETENSE.</p>
-      </div>
-    </div>
-  </section>
+    <!-- EVENTS / SESSIONS -->
+    <section id="events">
+        <div class="section-container">
+            <span class="section-label reveal">// SECTION_04</span>
+            <h2 class="reveal">UPCOMING <span class="accent">SESSIONS</span></h2>
+            <p class="section-intro reveal reveal-delay-1">
+                Private gatherings. Group sessions. Late-night link-ups. Members get priority access.
+                New faces must be vouched. Check the schedule.
+            </p>
+            <div class="events-list reveal reveal-delay-2">
+                <div class="event-item">
+                    <div class="event-date">25<span>JUL</span></div>
+                    <div class="event-info">
+                        <h4>New Meat Initiation — Mahi & Shudipta</h4>
+                        <p>Private warehouse session. Max 8 attendees. Tops needed. RSVP required.</p>
+                    </div>
+                    <span class="stat-pill">PRIVATE</span>
+                </div>
+                <div class="event-item">
+                    <div class="event-date">02<span>AUG</span></div>
+                    <div class="event-info">
+                        <h4>Bangla Town Rave & Breed</h4>
+                        <p>Underground afterparty. Music, darkness, and raw action. Location revealed day-of.</p>
+                    </div>
+                    <span class="stat-pill">SEMI-PUBLIC</span>
+                </div>
+                <div class="event-item">
+                    <div class="event-date">16<span>AUG</span></div>
+                    <div class="event-info">
+                        <h4>Full Pack Gathering — All Four</h4>
+                        <p>All members present. Gang session. Maximum capacity: 12. Strict door policy.</p>
+                    </div>
+                    <span class="stat-pill">PACK ONLY</span>
+                </div>
+                <div class="event-item">
+                    <div class="event-date">30<span>AUG</span></div>
+                    <div class="event-info">
+                        <h4>Zasim's Deepthroat Marathon</h4>
+                        <p>Zasim attempts to swallow 20 loads in one night. Spectators and participants welcome.</p>
+                    </div>
+                    <span class="stat-pill">OPEN EVENT</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <section id="events">
-    <div class="section-container">
-      <h2>BRUTAL <span class="accent">SESSIONS</span></h2>
-      <div style="display:flex; flex-direction: column; gap:1rem;">
-        <div style="background:#110000; padding:1.5rem; border:1px solid #ff0000;"><strong>25 JULY</strong> — MAHI GANGBANG INITIATION (8 TOPS NEEDED)</div>
-        <div style="background:#110000; padding:1.5rem; border:1px solid #ff0000;"><strong>02 AUG</strong> — BREEDING RAVE · LOCATION CLASSIFIED</div>
-        <div style="background:#110000; padding:1.5rem; border:1px solid #ff0000;"><strong>16 AUG</strong> — FULL PACK DESTRUCTION (ALL 4 MEMBERS)</div>
-      </div>
-    </div>
-  </section>
+    <!-- JOIN -->
+    <section id="join">
+        <div class="section-container" style="text-align:center;">
+            <span class="section-label reveal">// SECTION_05</span>
+            <h2 class="reveal">JOIN THE <span class="accent">FUCKING</span> PACK</h2>
+            <p class="reveal reveal-delay-1" style="font-family:'Crimson Pro',serif;font-size:1.2rem;color:#999;max-width:550px;margin:0 auto 2rem;font-style:italic;">
+                Link up. Get nasty. Events, meetups, and raw sessions in Toronto Bangla Town.
+                New members must be vouched by an existing pack brother.
+            </p>
+            <button class="btn-raw reveal reveal-delay-2" onclick="handleJoin()" style="font-size:1.1rem;padding:1.2rem 3rem;">
+                ENTER THE UNDERGROUND
+            </button>
+            <p class="reveal reveal-delay-3" style="font-family:'Share Tech Mono',monospace;font-size:0.6rem;color:#444;margin-top:1.5rem;letter-spacing:0.15em;">
+                BY PROCEEDING YOU AGREE TO THE LICENSE.TXT TERMS
+            </p>
+        </div>
+    </section>
 
-  <section id="join" style="text-align:center;">
-    <div class="section-container">
-      <h2>JOIN THE <span class="accent">SAVAGE</span> PACK</h2>
-      <button class="btn-raw" onclick="alert('WELCOME TO THE UNDERGROUND. CHECK ENCRYPTED CHANNELS.')">🔞 ENTER RAW UNDERGROUND 🔞</button>
-      <p style="color:#660000; margin-top:1rem;">BY ENTERING YOU ACCEPT ALL LICENSE TERMS.</p>
-    </div>
-  </section>
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-crest">SHOMOKAMI</div>
+        <p class="footer-tagline">RAW BANGLA GAY TORONTO · EST. 2026</p>
+        <div class="footer-links">
+            <a href="#home">HOME</a>
+            <a href="#members">NEW MEAT</a>
+            <a href="#license">LICENSE.TXT</a>
+            <a href="#territory">TERRITORY</a>
+            <a href="#events">SESSIONS</a>
+            <a href="#join">JOIN</a>
+        </div>
+        <p style="font-family:'Share Tech Mono',monospace;font-size:0.55rem;color:#333;letter-spacing:0.1em;">
+            &copy; 2026 SHOMOKAMI — ROOTS DEEP, COCKS DEEPER — NO LIMITS. NO MERCY. PURE FIRE.
+        </p>
+        <p style="font-family:'Share Tech Mono',monospace;font-size:0.5rem;color:#222;margin-top:0.5rem;letter-spacing:0.1em;">
+            ALL RIGHTS RESERVED · LICENSE.TXT GOVERNS ALL USE · TORONTO BANGLA TOWN · GTA
+        </p>
+    </footer>
 
-  <footer>
-    <div style="font-size:3rem; color:red;">SHOMOKAMI</div>
-    <p>RAW BANGLA GAY TORONTO · NO MERCY · EST. 2026</p>
-  </footer>
+    <script>
+        // Mobile menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
 
-  <script>
-    (function() {
-      const hamburger = document.getElementById('hamburger');
-      const navLinks = document.getElementById('navLinks');
-      hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
-      document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => navLinks.classList.remove('open'));
-      });
-      window.addEventListener('scroll', () => {
-        let current = '';
-        document.querySelectorAll('section[id]').forEach(section => {
-          if (window.scrollY >= section.offsetTop - 200) current = section.getAttribute('id');
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('open');
         });
-        document.querySelectorAll('.nav-links a').forEach(a => {
-          a.classList.remove('active');
-          if (a.getAttribute('href') === '#' + current) a.classList.add('active');
+
+        // Close mobile menu on link click
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('open');
+            });
         });
-      });
-      console.log('%cSHOMOKAMI%c — AGGRESSIVE MODE ACTIVE', 'font-size:2rem;color:red;', 'color:white;');
-    })();
-  </script>
+
+        // Smooth scroll for all anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Active nav link update on scroll
+        const sections = document.querySelectorAll('section[id]');
+        const navItems = document.querySelectorAll('.nav-links a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 150;
+                if (window.scrollY >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+            navItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('href') === '#' + current) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Join button handler
+        function handleJoin() {
+            const messages = [
+                'Welcome to the pack, brother. Hit the real channels for the real action.',
+                'You\'re in. Check your encrypted channels for the next session details.',
+                'Pack access granted. Remember: discretion is absolute. See you in Bangla Town.',
+                'New blood detected. A pack brother will reach out within 48 hours. Stay ready.',
+            ];
+            const msg = messages[Math.floor(Math.random() * messages.length)];
+            alert(msg);
+        }
+
+        // Intersection Observer for reveal animations
+        const revealElements = document.querySelectorAll('.reveal');
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: '0px 0px -50px 0px',
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                }
+            });
+        }, observerOptions);
+
+        revealElements.forEach(el => {
+            observer.observe(el);
+        });
+
+        // Console easter egg
+        console.log(
+            '%cSHOMOKAMI%c — RAW TORONTO BANGLA GAY CREW',
+            'font-size:2rem;color:#cc0000;font-weight:bold;',
+            'color:#aaa;'
+        );
+        console.log('%cLICENSE.TXT active. All terms enforced.', 'color:#555;font-style:italic;');
+    </script>
 </body>
 </html>
